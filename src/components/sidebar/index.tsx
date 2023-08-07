@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react';
 import Tab from './tab';
 
 interface Props {
