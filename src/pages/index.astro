@@ -1,6 +1,8 @@
 ---
 // Component Imports
 import Layout from '../components/layout';
+import Welcome from '../components/welcome';
+const url = Astro.url.pathname;
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -21,7 +23,7 @@ import Layout from '../components/layout';
   </head>
   <body class='m-0 p-0 bg-bgLight text-fgLight'>
     <main>
-      <Layout><p>home</p></Layout>
+      <Layout url={url}><Welcome /></Layout>
     </main>
   </body>
 </html>

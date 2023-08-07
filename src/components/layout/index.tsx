@@ -3,12 +3,13 @@ import type React from 'react';
 import type { ReactNode } from 'react';
 
 interface Props {
-  children: ReactNode; // The type for the children prop
+  children: ReactNode;
+  url: string;
 }
 
-const Layout: React.FC<Props> = ({ children }) => (
+const Layout: React.FC<Props> = ({ children, url }) => (
   <div className='border-[1px] h-full w-full absolute border-accent'>
-    <Sidebar />
+    <Sidebar url={url} />
     <div className={`ml-sbxl pl-6 pt-10 w-[900px]`}>
       {children}
       <p
