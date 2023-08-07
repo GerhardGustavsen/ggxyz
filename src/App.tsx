@@ -1,10 +1,12 @@
-import React from 'react';
-import Container from './components/container';
+import Sidebar from './components/sidebar';
+
+const sidebarWidth = 96;
 
 function App() {
   return (
-    <div className='App'>
-      <Container></Container>
+    <div className='border-[1px] h-full w-full absolute border-[#8000ff]'>
+      <Sidebar width={sidebarWidth} />
+      <div className={`ml-${sidebarWidth}`}>hello</div>
     </div>
   );
 }
