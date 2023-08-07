@@ -9,7 +9,7 @@ const Tab: React.FC<Props> = ({ path, title, url }) => (
     href={url}
     className={
       url == path
-        ? 'block bg-accent pl-[110px] ml-[-100px] font-bold'
+        ? 'block bg-accent pl-[110px] ml-[-100px] font-bold text-fgLight'
         : 'block pl-[10px]'
     }
   >

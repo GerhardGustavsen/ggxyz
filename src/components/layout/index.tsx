@@ -4,13 +4,13 @@ import type { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
-  url: string;
+  path: string;
 }
 
-const Layout: React.FC<Props> = ({ children, url }) => (
+const Layout: React.FC<Props> = ({ children, path }) => (
   <div className='border-[1px] h-full w-full absolute border-accent'>
-    <Sidebar url={url} />
-    <div className={`ml-sbxl pl-6 pt-10 w-[900px]`}>
+    <Sidebar path={path} />
+    <div className={`ml-sbxl pl-6 pt-6 w-[900px]`}>
       {children}
       <p
         className={
