@@ -14,8 +14,8 @@ const Dir: React.FC<Props> = ({ title, path, url, children }) => {
   else if (path.includes(url)) style = 'pl-[10px] text-accent';
 
   return (
-    <div className={'pl-[10px]'}>
-      <a href={url} className={style + 'block'}>
+    <div className={'pl-[10px] my-1 md:my-0'}>
+      <a href={url} className={style + ' block '}>
         {title}
       </a>
       {children}
