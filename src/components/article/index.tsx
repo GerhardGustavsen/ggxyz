@@ -1,40 +1,47 @@
+import Blog from './falvors/blog';
+import Broken from './falvors/broken';
+import Smal from './falvors/smal';
+
 interface Props {
-  text: string;
-  title?: string;
-  img?: string;
-  date?: Date;
+  json: {
+    title: string;
+    text: string;
+    img: string;
+    date: string;
+    type: string;
+  };
 }
 
-const Article: React.FC<Props> = ({ title, date, img, text }) => {
-  if (img) {
+const articleWidth = 'md:w-[675px] 2xl:w-[800px]';
+
+const Article: React.FC<Props> = ({ json }) => {
+  if (json.date == '' || json.text == '') {
+    return <Broken />;
+  }
+
+  const title = json.title != '' ? json.title : undefined;
+  const img = json.img != '' ? json.img : undefined;
+
+  if (json.type == 'blog') {
     return (
-      <div className='border-b-[1px] border-fgLight mb-6 pb-3 flex'>
-        <img
-          className='float-left mr-3'
-          src={`../../images/${img}.jpg`}
-          alt={img}
-          width='250'
-        />
-        <div>
-          <h2 className='font-bold text-lg inline'>
-            {date && date.toLocaleDateString('es-pa') + ' - '}
-            {title && title + ' '}
-          </h2>
-          <p className='inline'>{text}</p>
-        </div>
+      <div className={articleWidth + ' mb-6'}>
+        <Blog title={title} text={json.text} date={json.date} img={img} />
+        <p className='text-center'>{json.date}</p>
       </div>
     );
-  } else {
+  } else if (json.type == 'info') {
     return (
-      <div className='border-b-[1px] border-fgLight mb-6 pb-3 flex'>
-        <h2 className='font-bold text-lg inline'>
-          {date && date.toLocaleDateString('es-pa') + ' - '}
-          {title && title + ' '}
-        </h2>
-        <p className='inline'>{text}</p>
+      <div className={articleWidth + ' mb-6'}>
+        <Smal title={title} text={json.text} img={img} />
       </div>
     );
   }
+  return (
+    <div className={articleWidth + ' mb-6'}>
+      <Smal title={title} text={json.text} img={img} date={json.date} />
+      <p className='text-center'>{json.date}</p>
+    </div>
+  );
 };
 
 export default Article;

@@ -1,7 +1,7 @@
 ---
 // Component Imports
-import Article from '../components/article';
 import Layout from '../components/layout';
+import welcome from '../../public/articles/welcome.json';
 const path = Astro.url.pathname;
 
 // Full Astro Component Syntax:
@@ -23,12 +23,7 @@ const path = Astro.url.pathname;
   </head>
   <body class='m-0 p-0 bg-bgLight text-fgLight'>
     <main>
-      <Layout path={path}>
-        <Article
-          text='Hi, and welcome to my small corner of the internett.'
-          img='me'
-        />
-      </Layout>
+      <Layout path={path}>tet</Layout>
     </main>
   </body>
 </html>
