@@ -6,7 +6,7 @@ const Breadcrumbs: React.FC<Props> = ({ path }) => {
   const pathDirs = path.split('/');
 
   return (
-    <div className='md:hidden pt-6 px-6 last:bg-black font-bold'>
+    <div className='md:hidden pt-6 px-6 last:bg-black font-bold text-xl'>
       <a href={'/'}>gergus.no</a>
       {pathDirs.map((dir) => {
         if (dir != '')
