@@ -13,6 +13,8 @@ const Dir: React.FC<Props> = ({ title, path, url, children }) => {
     path = path.slice(0, -1);
   }
 
+  console.log('path:' + path + ' , url:' + url);
+
   let style = 'pl-[10px]';
   if (url == path)
     style = 'bg-accent pl-[110px] ml-[-100px] font-bold text-fgLight';
