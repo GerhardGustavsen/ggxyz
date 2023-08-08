@@ -10,15 +10,11 @@ interface Props {
 const Layout: React.FC<Props> = ({ children, path }) => (
   <div className='border-[1px] h-full w-full absolute border-accent'>
     <Sidebar path={path} />
-    <div className={`ml-sbxl pl-6 pt-6 w-[900px]`}>
+    <div
+      className={`md:ml-sbmd lg:ml-sblg 2xl:ml-sb2xl md:w-[650px] 2xl:w-[800px] pl-6 pt-6 w-full`}
+    >
       {children}
-      <p
-        className={
-          'text-center my-6 py-6 border-t-[1px] border-fgLight font-bold'
-        }
-      >
-        powered by astro 🚀
-      </p>
+      <p className={'text-center font-bold'}>powered by astro 🚀</p>
     </div>
   </div>
 );

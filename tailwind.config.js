@@ -2,6 +2,13 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx,astro}'],
   theme: {
+    screens: {
+      sm: '640px',
+      md: '875px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         accent: '#8000ff',
@@ -11,10 +18,10 @@ module.exports = {
         bgLight: '#333333',
       },
       spacing: {
-        sbsm: '70px',
-        sbmd: '80px',
-        sblg: '90px',
-        sbxl: '400px',
+        sbmd: '200px',
+        sblg: '250px',
+        sbxl: '300px',
+        sb2xl: '400px',
       },
     },
   },
