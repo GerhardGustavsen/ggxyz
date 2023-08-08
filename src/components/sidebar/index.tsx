@@ -4,7 +4,7 @@ interface Props {
 }
 
 const SideBar: React.FC<Props> = ({ path }) => (
-  <div className='md:w-sbmd lg:w-sblg 2xl:w-sb2xl h-full absolute bg-bgDark flex flex-col justify-between text-fgDark'>
+  <div className='md:w-sbmd lg:w-sblg 2xl:w-sb2xl h-full absolute bg-bgDark flex-col justify-between text-fgDark hidden md:flex'>
     <div>
       <a href='/'>
         <h1 className='2xl:text-3xl lg:text-center text-xl  m-5 text-accent'>
@@ -13,7 +13,7 @@ const SideBar: React.FC<Props> = ({ path }) => (
       </a>
       <Stack path={path} />
     </div>
-    <p className='text-center'>gergus.no - 2023</p>
+    <p className='text-center hidden md:block'>gergus.no - 2023</p>
   </div>
 );
 
