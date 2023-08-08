@@ -8,14 +8,14 @@ interface Props {
 }
 
 const Dir: React.FC<Props> = ({ title, path, url, children }) => {
-  let style = 'block pl-[10px]';
+  let style = 'pl-[10px]';
   if (url == path)
-    style = 'block bg-accent pl-[110px] ml-[-100px] font-bold text-fgLight';
-  else if (path.includes(url)) style = 'block pl-[10px] text-accent';
+    style = 'bg-accent pl-[110px] ml-[-100px] font-bold text-fgLight';
+  else if (path.includes(url)) style = 'pl-[10px] text-accent';
 
   return (
     <div className={'pl-[10px]'}>
-      <a href={url} className={style}>
+      <a href={url} className={style + 'block'}>
         {title}
       </a>
       {children}
