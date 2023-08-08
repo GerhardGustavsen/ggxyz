@@ -6,6 +6,7 @@ import Feed from '../components/feed';
 import welcome from '../../public/articles/welcome.json';
 import Article from '../components/article';
 import Stack from '../components/sidebar/stack';
+import AstroLogo from '../components/astro';
 const blog = await Astro.glob('../../public/articles/blog/*.json');
 const path = Astro.url.pathname;
 
@@ -31,7 +32,7 @@ const path = Astro.url.pathname;
       <Layout path={path}>
         <div class='hidden md:block'><Feed all={blog} /></div>
         <div class='md:hidden p-6'>
-          <Article json={welcome} /><Stack path={path} />
+          <Article json={welcome} /><Stack path={path} /><AstroLogo />
         </div>
       </Layout>
     </main>
