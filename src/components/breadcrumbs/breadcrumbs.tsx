@@ -16,7 +16,7 @@ const Breadcrumbs: React.FC<Props> = ({ path }) => {
         {pathDirs.map((dir) => {
           return (
             <>
-              <p className='inline text-accent'>/</p>
+              <p className='inline'>/</p>
               <a href={dir}>{dir}</a>
             </>
           );
