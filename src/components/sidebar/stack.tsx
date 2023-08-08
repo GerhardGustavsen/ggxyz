@@ -1,6 +1,4 @@
-import type { ReactNode } from 'react';
 import Dir from './dir';
-import Tab from './tab';
 
 interface Props {
   path: string;
@@ -8,18 +6,11 @@ interface Props {
 
 const Stack: React.FC<Props> = ({ path }) => (
   <>
-    <Dir title='blog'>
-      <Tab path={path} title={'test'} url='/test' />
-      <Tab path={path} title={'empty'} url='' />
+    <Dir title='blog' path={path} url='/blog'>
+      <Dir path={path} title={'2023'} url='/blog/2023' />
     </Dir>
-    <Dir title='images'>
-      <Tab path={path} title={'404'} url='/nope' />
-      <Tab path={path} title={'empty'} url='' />
-    </Dir>
-    <Dir title='code'>
-      <Tab path={path} title={'empty'} url='' />
-      <Tab path={path} title={'empty'} url='' />
-    </Dir>
+    <Dir path={path} title={'test'} url='/test' />
+    <Dir path={path} title={'404'} url='/nope' />
   </>
 );
 
