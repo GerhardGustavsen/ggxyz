@@ -19,13 +19,14 @@ const Feed: React.FC<Props> = ({ all, first }) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <div className='p-6'>
+    <div className='p-6 md:w-min'>
       {first?.map((art) => (
         <Article json={art} />
       ))}
       {sorted.map((art) => (
         <Article json={art} />
       ))}
+      <p className={'text-center font-bold pb-2'}>powered by astro 🚀</p>
     </div>
   );
 };

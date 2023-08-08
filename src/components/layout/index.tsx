@@ -15,10 +15,7 @@ const Layout: React.FC<Props> = ({ children, path }) => (
     <div
       className={`md:ml-sbmd lg:ml-sblg 2xl:ml-sb2xl overflow-scroll flex-1`}
     >
-      <div className='md:w-min'>
-        {children}
-        <p className={'text-center font-bold pb-2'}>powered by astro 🚀</p>
-      </div>
+      {children}
     </div>
   </div>
 );
