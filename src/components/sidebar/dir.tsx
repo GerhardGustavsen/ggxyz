@@ -8,6 +8,11 @@ interface Props {
 }
 
 const Dir: React.FC<Props> = ({ title, path, url, children }) => {
+  const last = path.slice(-1);
+  if (last == '/') {
+    path = path.slice(0, -1);
+  }
+
   let style = 'pl-[10px]';
   if (url == path)
     style = 'bg-accent pl-[110px] ml-[-100px] font-bold text-fgLight';
