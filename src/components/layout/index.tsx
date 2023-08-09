@@ -13,7 +13,7 @@ const Layout: React.FC<Props> = ({ children, path }) => (
     <Breadcrumbs path={path} />
     <Sidebar path={path} />
     <div
-      className={`md:ml-sbmd lg:ml-sblg 2xl:ml-sb2xl overflow-scroll flex-1`}
+      className={`md:ml-sbmd lg:ml-sblg 2xl:ml-sb2xl overflow-y-scroll flex-1`}
     >
       {children}
     </div>
