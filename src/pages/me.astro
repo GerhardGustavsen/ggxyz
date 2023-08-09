@@ -1,0 +1,38 @@
+---
+// Component Imports
+import Layout from '../components/layout';
+import Feed from '../components/feed';
+import welcome from '../../public/articles/welcome.json';
+import Article from '../components/article';
+import Stack from '../components/sidebar/stack';
+import AstroLogo from '../components/astro';
+const blog = await Astro.glob('../../public/articles/blog/*.json');
+const path = Astro.url.pathname;
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <style>
+      html,
+      body {
+        font-family: 'Courier New', monospace, system-ui;
+      }
+    </style>
+  </head>
+  <body class='m-0 p-0 bg-bgLight text-fgLight'>
+    <main>
+      <Layout path={path}>
+        <div class='p-6 w-min'>
+          <Article json={welcome} /><p>github link & so on...</p><AstroLogo />
+        </div>
+      </Layout>
+    </main>
+  </body>
+</html>

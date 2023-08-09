@@ -1,7 +1,7 @@
 ---
 // Component Imports
 import Layout from '../components/layout';
-import welcome from '../../public/articles/welcome.json';
+import Conections from '../components/web';
 const path = Astro.url.pathname;
 
 // Full Astro Component Syntax:
@@ -23,7 +23,7 @@ const path = Astro.url.pathname;
   </head>
   <body class='m-0 p-0 bg-bgLight text-fgLight'>
     <main>
-      <Layout path={path}>test</Layout>
+      <Layout path={path}><Conections /></Layout>
     </main>
   </body>
 </html>
