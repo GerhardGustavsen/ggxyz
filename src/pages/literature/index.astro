@@ -1,37 +1,14 @@
 ---
 // Component Imports
-import '../../main.scss';
-import Layout from '../../components/layout';
-import Feed from '../../components/feed';
+import Layout from '../../layouts/main.astro';
 import Padding from '../../components/layout/padding';
-
-const path = Astro.url.pathname;
-const blog = await Astro.glob('../../../public/articles/blog/*');
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <style>
-      html,
-      body {
-        font-family: 'Courier New', monospace, system-ui;
-      }
-    </style>
-  </head>
-  <body class='m-0 p-0 bg-bgLight text-fgLight pattern'>
-    <main>
-      <Layout path={path}>
-        <Padding>
-          <p>Soon to come: capetalistic society and its future</p>
-        </Padding>
-      </Layout>
-    </main>
-  </body>
-</html>
+<Layout>
+  <Padding>
+    <p>Soon to come: capetalistic society and its future</p>
+  </Padding>
+</Layout>

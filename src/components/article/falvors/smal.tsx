@@ -10,15 +10,15 @@ const Smal: React.FC<Props> = ({ title, img, text, date }) => {
     <div className='border-b-[1px] border-fgLight pb-3 flex'>
       {img && (
         <img
-          className='relative opacity-0 mr-[-250px]'
+          className='opacity-0 mr-[-250px]'
           src={`../../images/${img}`}
           width='250'
         />
       )}
-      <div>
+      <div className='w-[100%]'>
         {img && (
           <img
-            className='float float-left mr-3 bg-red'
+            className='float float-left mr-3'
             src={`../../images/${img}`}
             alt={img}
             width='250'

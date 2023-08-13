@@ -1,5 +1,3 @@
-import '../../main.scss';
-
 interface Props {
   name: string;
   url: string;
