@@ -6,10 +6,12 @@ interface Props {
 
 const Stack: React.FC<Props> = ({ path }) => (
   <div className='text-xl md:text-base underline md:no-underline'>
-    <Dir path={path} title='blog' url='/blog' />
-    <Dir path={path} title={'me'} url='/me' />
-    <Dir path={path} title={'projects'} url='/projects' />
-    <Dir path={path} title={'web'} url='/web' />
+    <Dir path={path} url='/me' />
+    <Dir path={path} url='/blog' />
+    <Dir path={path} url='/code' />
+    <Dir path={path} url='/projects' />
+    <Dir path={path} url='/literature' />
+    <Dir path={path} url='/links' />
   </div>
 );
 

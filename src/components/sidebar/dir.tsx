@@ -1,13 +1,12 @@
 import type { ReactNode } from 'react';
 
 interface Props {
-  title: string;
   path: string;
   url: string;
   children?: ReactNode;
 }
 
-const Dir: React.FC<Props> = ({ title, path, url, children }) => {
+const Dir: React.FC<Props> = ({ path, url, children }) => {
   const last = path.slice(-1);
   if (last == '/') {
     path = path.slice(0, -1);
@@ -21,7 +20,7 @@ const Dir: React.FC<Props> = ({ title, path, url, children }) => {
   return (
     <div className={'pl-[10px] my-1 md:my-0'}>
       <a href={url} className={style + ' block '}>
-        {title}
+        {url.slice(1)}
       </a>
       {children}
     </div>

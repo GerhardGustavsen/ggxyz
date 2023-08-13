@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Padding: React.FC<Props> = ({ children }) => (
-  <div className='p-6 md:w-min'>{children}</div>
+  <div className='p-6 md:w-fit'>{children}</div>
 );
 
 export default Padding;
