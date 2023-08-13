@@ -3,11 +3,12 @@
 import '../main.scss';
 import Layout from '../components/layout';
 import Feed from '../components/feed';
-import welcome from '../../public/articles/welcome.json';
+import me from '../../public/articles/me.json';
 import Article from '../components/article';
 import Stack from '../components/sidebar/stack';
 import AstroLogo from '../components/astro';
 import Padding from '../components/layout/padding';
+import Link from '../components/link';
 const blog = await Astro.glob('../../public/articles/blog/*.json');
 const path = Astro.url.pathname;
 
@@ -32,7 +33,13 @@ const path = Astro.url.pathname;
     <main>
       <Layout path={path}>
         <Padding>
-          <Article json={welcome} /><p>github link & so on...</p><AstroLogo />
+          <Article json={me} /><Link
+            name='GitHub'
+            url='github.com/GerhardGustavsen'
+          /><Link
+            name='LinkedIn'
+            url='www.linkedin.com/in/gerhard-gustavsen-237146234/'
+          /><Link name='DuckMouse' url='duckmouse.no/' /><AstroLogo />
         </Padding>
       </Layout>
     </main>

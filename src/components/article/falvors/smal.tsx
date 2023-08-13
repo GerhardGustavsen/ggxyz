@@ -18,7 +18,7 @@ const Smal: React.FC<Props> = ({ title, img, text, date }) => {
       )}
       <div>
         {title && <h2 className='font-bold text-lg inline'>{title + ' '}</h2>}
-        <p className='inline'>{text}</p>
+        <p className='inline whitespace-pre-wrap'>{text}</p>
       </div>
     </div>
   );

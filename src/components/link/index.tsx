@@ -6,7 +6,10 @@ interface Props {
 }
 
 const Link: React.FC<Props> = ({ name, url }) => (
-  <a className='text-accent underline link' href={'https://' + url}>
+  <a
+    className='text-accent underline mr-[1em] hover:bg-accent hover:text-black'
+    href={'https://' + url}
+  >
     {name}
   </a>
 );
