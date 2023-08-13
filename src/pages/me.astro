@@ -1,11 +1,13 @@
 ---
 // Component Imports
+import '../main.scss';
 import Layout from '../components/layout';
 import Feed from '../components/feed';
 import welcome from '../../public/articles/welcome.json';
 import Article from '../components/article';
 import Stack from '../components/sidebar/stack';
 import AstroLogo from '../components/astro';
+import Padding from '../components/layout/padding';
 const blog = await Astro.glob('../../public/articles/blog/*.json');
 const path = Astro.url.pathname;
 
@@ -26,12 +28,12 @@ const path = Astro.url.pathname;
       }
     </style>
   </head>
-  <body class='m-0 p-0 bg-bgLight text-fgLight'>
+  <body class='m-0 p-0 bg-bgLight text-fgLight pattern'>
     <main>
       <Layout path={path}>
-        <div class='p-6 w-min'>
+        <Padding>
           <Article json={welcome} /><p>github link & so on...</p><AstroLogo />
-        </div>
+        </Padding>
       </Layout>
     </main>
   </body>

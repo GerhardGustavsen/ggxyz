@@ -1,5 +1,6 @@
 ---
 // Component Imports
+import '../main.scss';
 import Layout from '../components/layout';
 
 const path = Astro.url.pathname;
@@ -21,7 +22,7 @@ const path = Astro.url.pathname;
       }
     </style>
   </head>
-  <body class='m-0 p-0 bg-bgLight text-fgLight'>
+  <body class='m-0 p-0 bg-bgLight text-fgLight pattern'>
     <main>
       <Layout path={path}>
         <div class='flex items-center justify-center w-full h-full'>

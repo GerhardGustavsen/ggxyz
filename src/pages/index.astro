@@ -1,8 +1,8 @@
 ---
 // Component Imports
+import '../main.scss';
 import Layout from '../components/layout';
 import Feed from '../components/feed';
-
 import welcome from '../../public/articles/welcome.json';
 import Article from '../components/article';
 import Stack from '../components/sidebar/stack';
@@ -27,7 +27,7 @@ const path = Astro.url.pathname;
       }
     </style>
   </head>
-  <body class='m-0 p-0 bg-bgLight text-fgLight'>
+  <body class='m-0 p-0 bg-bgLight text-fgLight pattern'>
     <main>
       <Layout path={path}>
         <div class='hidden md:block'><Feed all={blog} /></div>

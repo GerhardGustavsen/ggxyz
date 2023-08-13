@@ -1,5 +1,6 @@
 ---
 // Component Imports
+import '../../main.scss';
 import Layout from '../../components/layout';
 import Feed from '../../components/feed';
 
@@ -23,7 +24,7 @@ const blog = await Astro.glob('../../../public/articles/blog/*');
       }
     </style>
   </head>
-  <body class='m-0 p-0 bg-bgLight text-fgLight'>
+  <body class='m-0 p-0 bg-bgLight text-fgLight pattern'>
     <main>
       <Layout path={path}><Feed all={blog} /></Layout>
     </main>
