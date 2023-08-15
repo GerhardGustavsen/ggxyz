@@ -4,8 +4,7 @@ import Layout from '../layouts/main.astro';
 import welcome from '../../public/articles/welcome.json';
 import Article from '../components/article';
 import Stack from '../components/sidebar/stack';
-import AstroLogo from '../components/astro';
-import Padding from '../components/layout/padding';
+import AstroLogo from '../components/links/astro';
 const path = Astro.url.pathname;
 
 // Full Astro Component Syntax:
@@ -13,7 +12,5 @@ const path = Astro.url.pathname;
 ---
 
 <Layout>
-  <Padding>
-    <Article json={welcome} /><Stack path={path} /><AstroLogo />
-  </Padding>
+  <Article json={welcome} /><Stack path={path} /><AstroLogo />
 </Layout>

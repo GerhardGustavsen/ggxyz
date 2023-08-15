@@ -1,0 +1,38 @@
+---
+type dir = {
+  name: string;
+  url: string;
+};
+
+const path = Astro.url.pathname
+  .split('/')
+  .filter((entry) => entry.trim() !== '');
+path.unshift(Astro.url.origin);
+
+const dirs: dir[] = [];
+let memo = '';
+path.forEach((dir) => {
+  memo = memo + dir + '/';
+  dirs.push({
+    name: dir,
+    url: memo,
+  });
+});
+
+dirs[0].name = dirs[0].name.split('/').pop() || 'gergus.no';
+---
+
+
+<div class='md:hidden pt-6 px-6 font-bold text-xl'>
+  {
+    dirs.map((dir) => {
+      return (
+        <!-- prettier-ignore -->
+        <>{dirs[0] != dir && <a>/</a>}<a 
+        class='last-of-type:border-b-[2px] border-accent' 
+        href={dir.url}
+        >{dir.name}</a></>
+      );
+    })
+  }
+</div>

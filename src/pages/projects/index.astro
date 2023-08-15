@@ -1,17 +1,19 @@
 ---
 // Component Imports
 import Layout from '../../layouts/main.astro';
-import Padding from '../../components/layout/padding';
+import Articles from '../../components/links/article.astro';
+
+const posts = await Astro.glob('./*.md');
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <Layout>
-  <Padding>
-    <p>
-      Soon to come: duckmouse, camper van, drone, Chrashgami, a indepth study of
-      the 2 cycle motor
-    </p>
-  </Padding>
+  <Articles posts={posts} />
+  <br />
+  <p>
+    Soon to come: duckmouse, camper van, drone, Chrashgami, a indepth study of
+    the 2 cycle motor & bunker boys
+  </p>
 </Layout>

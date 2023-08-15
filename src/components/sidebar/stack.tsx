@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Stack: React.FC<Props> = ({ path }) => (
-  <div className='text-xl md:text-base underline md:no-underline'>
+  <div className='text-xl md:text-base'>
     <Dir path={path} url='/me' />
     <Dir path={path} url='/blog' />
     <Dir path={path} url='/code' />

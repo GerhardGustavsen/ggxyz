@@ -1,6 +1,6 @@
 ---
 import '../styles/glob.scss';
-import Breadcrumbs from '../components/breadcrumbs/breadcrumbs';
+import Breadcrumbs from '../components/breadcrumbs/breadcrumbs.astro';
 import Sidebar from '../components/sidebar';
 const path = Astro.url.pathname;
 ---
@@ -24,9 +24,11 @@ const path = Astro.url.pathname;
         <Breadcrumbs path={path} />
         <Sidebar path={path} />
         <div
-          class={`md:ml-sbmd lg:ml-sblg 2xl:ml-sb2xl overflow-y-scroll flex-1`}
+          class={`md:ml-sbmd lg:ml-sblg 2xl:ml-sb2xl overflow-y-scroll flex-1 p-6`}
         >
-          <slot />
+          <div class='lg:w-[750px] 2xl:w-[830px]'>
+            <slot />
+          </div>
         </div>
       </div>
     </main>

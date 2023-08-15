@@ -20,7 +20,7 @@ const Dir: React.FC<Props> = ({ path, url, children }) => {
   return (
     <div className={'pl-[10px] my-1 md:my-0'}>
       <a href={url} className={style + ' block '}>
-        {url.slice(1)}
+        ❯ {url.slice(1)}
       </a>
       {children}
     </div>

@@ -1,0 +1,22 @@
+---
+// Your component script here!
+const { posts } = Astro.props;
+---
+
+<!-- prettier-ignore -->
+<ul>
+    {
+      posts.map((post: any) => (
+        <li class="text-xl mb-1">
+          <p class="inline">❯</p>
+          <a href={post.url}><p 
+          class="inline text-accent font-bold">[</p><p 
+          class="inline text-green-500">{new Date(post.frontmatter.pubDate).toLocaleDateString('en-UK')}</p><p 
+          class="inline text-accent font-bold"> ~ </p><p 
+          class="inline text-[#02ebfc] underline">{post.frontmatter.title}</p><p 
+          class="inline text-accent font-bold">]</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>

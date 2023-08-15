@@ -12,7 +12,7 @@ interface Props {
   };
 }
 
-const articleWidth = 'md:w-[675px] 2xl:w-[800px]';
+const articleWidth = '';
 
 const Article: React.FC<Props> = ({ json }) => {
   if (json.date == '' || json.text == '') {

@@ -1,27 +1,25 @@
 ---
 // Component Imports
 import Layout from '../layouts/main.astro';
-import Padding from '../components/layout/padding';
-import Link from '../components/link';
+import Link from '../components/links/web';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <Layout>
-  <Padding>
-    <div class='w-max'>
-      <p>Friends of mine:</p>
-      <div class='mb-6 pl-3'>
-        <Link name='Isak' url='isak.me/' />
-        <Link name='Nuutti' url='nuutti.no/' />
-      </div>
-      <p>Other cool websites</p>
-      <div class='mb-6 pl-3'>
-        <Link name='DanBall' url='dan-ball.jp/en/' />
-        <Link name='Luke Smith' url='lukesmith.xyz/' />
-        <Link name='Vitalik' url='vitalik.ca/' />
-      </div>
+  <div>
+    <p>Friends of mine:</p>
+    <div class='mb-6 pl-3'>
+      <Link name='Isak' url='isak.me/' />
+      <Link name='Nuutti' url='nuutti.no/' />
     </div>
-  </Padding>
+    <p>Other cool websites</p>
+    <div class='mb-6 pl-3'>
+      <Link name='DanBall' url='dan-ball.jp/en/' />
+      <Link name='Luke Smith' url='lukesmith.xyz/' />
+      <Link name='Vitalik' url='vitalik.ca/' />
+      <Link name='Hetland' url='folk.idi.ntnu.no/mlh/hetland_org/' />
+    </div>
+  </div>
 </Layout>

@@ -1,7 +1,5 @@
-import { Container } from 'postcss';
 import Article from '../article';
-import Astro from '../astro';
-import Padding from '../layout/padding';
+import Astro from '../links/astro';
 
 type JSONdoc = {
   title: string;
@@ -22,7 +20,7 @@ const Feed: React.FC<Props> = ({ all, first }) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <Padding>
+    <>
       {first?.map((art) => (
         <Article json={art} />
       ))}
@@ -30,7 +28,7 @@ const Feed: React.FC<Props> = ({ all, first }) => {
         <Article json={art} />
       ))}
       <Astro />
-    </Padding>
+    </>
   );
 };
 
