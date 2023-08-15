@@ -7,19 +7,23 @@ type dir = {
 const path = Astro.url.pathname
   .split('/')
   .filter((entry) => entry.trim() !== '');
-path.unshift(Astro.url.origin);
 
 const dirs: dir[] = [];
-let memo = '';
+let memo = 'https://gergus.no/';
 path.forEach((dir) => {
   memo = memo + dir + '/';
   dirs.push({
-    name: dir,
+    name: dir.replaceAll('%20',' '),
     url: memo,
   });
 });
 
-dirs[0].name = dirs[0].name.split('/').pop() || 'gergus.no';
+const first: dir = {
+  name:'gergus.no',
+  url:'/'
+}
+
+dirs.unshift(first);
 ---
 
 
