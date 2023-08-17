@@ -1,6 +1,6 @@
 ---
 // Your component script here!
-const path = Astro.url.pathname.split('/');
+const path = Astro.url.pathname.split('/').filter((entry) => entry.trim() !== '');
 const title = path[ path.length -1 ];
 const upper = title[0].toUpperCase() + title.slice(1);
 const { posts } = Astro.props;
