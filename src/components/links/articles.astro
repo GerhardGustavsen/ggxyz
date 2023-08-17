@@ -1,0 +1,31 @@
+---
+// Your component script here!
+const path = Astro.url.pathname.split('/');
+const title = path[ path.length -1 ];
+const upper = title[0].toUpperCase() + title.slice(1);
+const { posts } = Astro.props;
+---
+
+<!-- prettier-ignore -->
+<div class="flex border-fgLight mb-3">
+  <div class='border-t-2 flex-1 translate-y-3'></div>
+  <div class='text-lg mx-2'>{ upper }</div>
+  <div class='border-t-2 flex-1 translate-y-3'></div>
+</div>
+<ul class="mb-5">
+  {
+    posts.map((post: any) => (
+    <!-- prettier-ignore -->
+      <li class='text-lg mb-1'><p 
+        class='inline'>❯ </p><a 
+        href={post.url}><p 
+        class='inline text-accent font-bold'>[</p><p 
+        class='inline text-green-500'>{new Date(post.frontmatter.pubDate).toLocaleDateString('en-UK')}</p><p 
+        class='inline text-accent font-bold'> ~ </p><p 
+        class='inline text-[#02ebfc] underline'>{post.frontmatter.title}</p><p 
+        class='inline text-accent font-bold'>]</p>
+        </a>
+      </li>
+    ))
+  }
+</ul>

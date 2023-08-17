@@ -1,0 +1,11 @@
+---
+// Your component script here!
+const { name, url } = Astro.props;
+---
+
+<!-- prettier-ignore -->
+<a href={'https://' + url} class="text-lg mb-1"><p 
+  class="inline text-accent font-bold">[</p><p 
+  class="inline text-[#02ebfc] underline">{name}</p><p 
+  class="inline text-accent font-bold">]</p>
+</a>

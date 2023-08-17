@@ -2,11 +2,16 @@
 // Component Imports
 import Layout from '../../layouts/main.astro';
 
+import Articles from '../../components/links/articles.astro';
+
+const posts = await Astro.glob('./*.md');
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <Layout>
+  <Articles posts={posts} />
   <p>
     Soon to come: arch usb, functional preformace testing with cypress,
     procedurally generated minesweeper

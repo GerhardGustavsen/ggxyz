@@ -7,14 +7,14 @@ type dir = {
 const path = Astro.url.pathname
   .split('/')
   .filter((entry) => entry.trim() !== '');
-
 const dirs: dir[] = [];
-let memo = 'https://gergus.no/';
+let base = import.meta.env.PROD ? 'https://gergus.no/' : 'http://localhost:3000/';
+
 path.forEach((dir) => {
-  memo = memo + dir + '/';
+  base += dir + '/';
   dirs.push({
     name: dir.replaceAll('%20',' '),
-    url: memo,
+    url: base,
   });
 });
 
