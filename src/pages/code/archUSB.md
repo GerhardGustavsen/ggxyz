@@ -5,7 +5,7 @@ pubDate: 2023-08-17
 ---
 
 
-![Usb from chain](/public/images/usbCool.jpg)
+![Usb from chain](/images/usbCool.jpg)
 
 ## Background
 In 2020, I started Informatics at NTNU. There, I quickly joined the development group [Dotkom](https://old.online.ntnu.no/#!about/dotkom). We were responsible for maintaining the website [online.no](https://old.online.ntnu.no/). However, I probably learned much more about Linux during this time rather than web development. One of the older students helped me install Linux as a dual boot on my laptop a few weeks after joining the group. The flavor was Manjaro, and being completely new to both programming and Linux, this was quite a steep learning curve.
@@ -37,7 +37,7 @@ To address some of these problems, I needed to think thoroughly about what USB d
 
 I ended up going for a SanDisk 128GB Ultra Fit USB 3.1 Flash Drive. This drive is fast and small. It has 128GB, which was more than enough for my needs. It also had a small profile and therefore would sit almost flush with my computer.
 
-![Sandisk Ultra fit](/public/images/sandisk.jpg)
+![Sandisk Ultra fit](/images/sandisk.jpg)
 
 There is a good guide on removable Arch systems on the Arch Wiki. I followed [this](https://wiki.archlinux.org/title/Install_Arch_Linux_on_a_removable_medium) guide and improvised from some other sources. The system I ended up with was quite lightweight and efficient, with headless start and an i3 tiling manager. I really thought the project was a success and used the removable Arch USB as my main development system for well over a year afterward.
 
@@ -50,7 +50,7 @@ As far as I understand, the way I set up the system made the Linux kernel load o
 ### Swap
 Perhaps the most interesting configuration was that I omitted the swap partition. A swap partition is a space on the disk that can act as RAM if the conventional RAM is full. This is handy as you can use more memory-intensive applications with less built-in RAM, but this comes at a cost of speed, obviously. I only have a limited number of read and write cycles on the USB drive, so I decided not to create any swap partition. I don't know how many more read-write cycles the built-in SSD of the laptop could handle, and I may have been wrong to omit the swap partition based on this justification alone. However, as I used the drive, I realized that the drive became quite warm, and I think I would have exacerbated this problem by having a swap partition.
 
-![Usb in laptop](/public/images/usb.jpg)
+![Usb in laptop](/images/usb.jpg)
 
 ### Today
 As of writing this article, I am still on Arch, but I am now back to a normal dual-boot system. I used the removable USB until, as before, I managed to break it by tinkering with some commands I did not completely understand. I am now much more sturdy with Arch and Linux in general. I later bought a ThinkPad 480s and installed the [LARBS](https://larbs.xyz/) shell script to provide me with an opinionated program assortment. I have modified LARBS quite a bit since installing it, and I hope to one day fork the [LARBS distro](https://github.com/LukeSmithxyz/LARBS) and create GARBS.
