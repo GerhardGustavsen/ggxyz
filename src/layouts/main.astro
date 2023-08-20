@@ -21,10 +21,12 @@ const path = Astro.url.pathname;
   <body class='m-0 p-0 bg-bgLight text-fgLight patternDark'>
     <main>
       <div class='md:border-[1px] h-full w-full absolute border-accent md:flex'>
-        <Breadcrumbs path={path} />
         <Sidebar path={path} />
-        <div class={`md:ml-sbmd lg:ml-sblg 2xl:ml-sb2xl flex-1 p-6`}>
-          <div class='lg:w-[750px] 2xl:w-[830px]'>
+        <div
+          class={`md:ml-sbmd lg:ml-sblg 2xl:ml-sb2xl flex-1 overflow-y-scroll h-full`}
+        >
+          <Breadcrumbs path={path} />
+          <div class='lg:w-[750px] 2xl:w-[830px] p-6'>
             <slot />
           </div>
         </div>
