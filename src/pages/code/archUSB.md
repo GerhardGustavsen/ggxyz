@@ -1,7 +1,7 @@
 ---
-layout: /src/layouts/main.astro
+layout: /src/layouts/article.astro
 title: Removable Arch USB
-pubDate: 2023-08-17
+date: 2023-08-17
 ---
 
 
@@ -52,7 +52,7 @@ Perhaps the most interesting configuration was that I omitted the swap partition
 
 ![Usb in laptop](/images/usb.jpg)
 
-### Today
+## Today
 As of writing this article, I am still on Arch, but I am now back to a normal dual-boot system. I used the removable USB until, as before, I managed to break it by tinkering with some commands I did not completely understand. I am now much more sturdy with Arch and Linux in general. I later bought a ThinkPad 480s and installed the [LARBS](https://larbs.xyz/) shell script to provide me with an opinionated program assortment. I have modified LARBS quite a bit since installing it, and I hope to one day fork the [LARBS distro](https://github.com/LukeSmithxyz/LARBS) and create GARBS.
 
 Using a Linux distro like Arch has taught me a lot. Obviously, a lot about how an operating system works, but also some more subtle things. I have learned how little I felt like I owned my computer when using Windows. It might sound a bit pretentious, but it's true. I do not look at my computer as this completely black box anymore. I can fix it, and I can (to a certain point) understand it. It's also incredibly liberating to be able to choose when and what to update. I own my computer, and it's not the other way around. Lastly, the process has made me fall in love with the philosophy of open source. It goes deeper than just creating the coolest looking desktop setup and having the best tiling managers. I believe this love of open source has seeped into other parts of my mind and shaped a good portion of my philosophy. This whole process has pushed me towards a fully open source system, and I truly think there is no way back to Windows now. I still keep a small partition with Windows on my machine, but I find myself using it less and less. Now, I may only boot into it once every other month.

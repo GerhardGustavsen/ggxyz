@@ -1,5 +1,4 @@
 import Article from '../article';
-import Astro from '../links/astro';
 
 type JSONdoc = {
   title: string;
@@ -27,7 +26,6 @@ const Feed: React.FC<Props> = ({ all, first }) => {
       {sorted.map((art) => (
         <Article json={art} />
       ))}
-      <Astro />
     </>
   );
 };

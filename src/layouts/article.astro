@@ -1,0 +1,28 @@
+---
+import './article.scss';
+import Layout from './main.astro';
+import Logo from '/favicon.svg';
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <div class='article'>
+    <div class='flex border-fgLight mb-3'>
+      <div class='border-t-2 flex-1 translate-y-3'></div>
+      <div class='text-xl mx-2'>{frontmatter.title}</div>
+      <div class='border-t-2 flex-1 translate-y-3'></div>
+    </div>
+    <slot />
+    <div class='text-sm'>
+      <p class=''>Written by Gerhard</p>
+      <div class='flex mb-[-45px]'>
+        <div class='flex-1'>
+          <p class='border-fgLight border-t-[1px] pt-[0.05em]'>
+            {new Date(frontmatter.date).toLocaleDateString('en-UK')}
+          </p>
+        </div>
+        <img class='translate-y-[-15px]' width='45px' src={Logo} />
+      </div>
+    </div>
+  </div>
+</Layout>

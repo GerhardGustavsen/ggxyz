@@ -1,0 +1,52 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.article {
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+
+  & > p {
+    margin-bottom: 1em;
+    text-align: justify;
+
+    & > img {
+      padding: 0em 1em 1em 1em;
+      max-height: 28em;
+      float: left;
+      margin: auto;
+
+      @media (max-width: 40em) {
+        float: none;
+      }
+    }
+  }
+
+  & > h2 {
+    font-size: large;
+    border-width: 0 0px 2px 0px;
+    margin-bottom: 0.2em;
+  }
+
+  & > h3 {
+    font-size: large;
+  }
+
+  & > ul {
+    margin-bottom: 1em;
+    padding-left: 2em;
+    & > li {
+      list-style-type: disc;
+    }
+  }
+
+  & > ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+    & > li {
+      list-style-type: upper-roman;
+    }
+  }
+}
