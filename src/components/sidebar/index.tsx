@@ -1,4 +1,3 @@
-import '../../styles/glob.scss';
 import Stack from './stack';
 interface Props {
   path: string;

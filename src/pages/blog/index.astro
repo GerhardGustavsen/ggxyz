@@ -1,12 +1,6 @@
 ---
-// Component Imports
 import Layout from '../../layouts/main.astro';
-import Feed from '../../components/feed';
-
-const blog = await Astro.glob('../../../public/articles/blog/*');
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const allPosts = (await Astro.glob('./*.md')).reverse();
 ---
 
-<Layout><Feed all={blog} /></Layout>
+<Layout>{allPosts.map((item) => <item.Content />)}</Layout>

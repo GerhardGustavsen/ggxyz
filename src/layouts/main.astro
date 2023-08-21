@@ -1,5 +1,5 @@
 ---
-import '../styles/glob.scss';
+import './main.scss';
 import Breadcrumbs from '../components/breadcrumbs/breadcrumbs.astro';
 import Sidebar from '../components/sidebar';
 const path = Astro.url.pathname;
@@ -11,12 +11,7 @@ const path = Astro.url.pathname;
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <style>
-      html,
-      body {
-        font-family: 'Courier New', monospace, system-ui;
-      }
-    </style>
+    <style></style>
   </head>
   <body class='m-0 p-0 bg-bgLight text-fgLight patternDark'>
     <main>

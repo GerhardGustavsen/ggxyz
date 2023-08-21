@@ -19,7 +19,7 @@ I decided that a trial by fire was the best and fastest way to learn a new opera
 Anyways, exams came along, and I never figured out how to get eclipse to work properly. I failed object-oriented programming by quite a margin. And a short week after that, I managed to execute a "rm * -rf" command in the root directory. Traumatized I had to again retreat back to Windows. However, that was not the end of my journey with Linux. After half a year of not failing classes and having a working laptop, I was back to tinkering with Linux. The year was 2021 and this time I would be a bit more cautious. I now wanted my Arch instalation as far away from my Windows installation as possible.
 
 ## Project
-The project was to install Arch Linux on a USB thumb drive.
+The project was to install a persistent Arch Linux OS on a USB thumb drive.
 
 ### The beneifits:
 - Hard to screw up other operating systems when I am working on a completely isolated disk.
