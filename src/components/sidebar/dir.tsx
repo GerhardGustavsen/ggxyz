@@ -12,7 +12,7 @@ const Dir: React.FC<Props> = ({ path, url, children }) => {
     path = path.slice(0, -1);
   }
 
-  let style = 'pl-[10px]';
+  let style = 'pl-[10px] hover:ml-[0.5em]';
   if (url == path)
     style = 'bg-accent pl-[110px] ml-[-100px] font-bold text-fgLight';
   else if (path.includes(url)) style = 'pl-[10px] text-accent';
