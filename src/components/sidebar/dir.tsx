@@ -14,8 +14,9 @@ const Dir: React.FC<Props> = ({ path, url, children }) => {
 
   let style = 'pl-[10px] hover:ml-[0.5em]';
   if (url == path)
-    style = 'bg-accent pl-[110px] ml-[-100px] font-bold text-fgLight';
-  else if (path.includes(url)) style = 'pl-[10px] text-accent';
+    style =
+      'bg-accent pl-[11em] hover:ml-[-9.5em] ml-[-10em] font-bold text-fgLight';
+  else if (path.includes(url)) style = 'pl-[10px] hover:ml-[0.5em] text-accent';
 
   return (
     <div className={'pl-[10px] my-1 md:my-0'}>

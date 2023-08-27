@@ -13,7 +13,7 @@ const { posts } = Astro.props;
   {
     posts.map((post: any) => (
     <!-- prettier-ignore -->
-      <li class='text-lg mb-1'><p 
+      <li class='text-lg mb-1 hover:ml-[0.5em]'><p 
         class='inline'>❯ </p><a 
         href={post.url}><p 
         class='inline text-accent font-bold'>[</p><p 

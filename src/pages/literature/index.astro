@@ -1,13 +1,20 @@
 ---
 // Component Imports
 import Layout from '../../layouts/main.astro';
-
-let posts = await Astro.glob('./*.md');
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import Link from '../../components/links/web.astro';
 ---
 
 <Layout>
-  <p>Soon to come: capetalistic society and its future</p>
+  <p>
+    This is not my own work, but rather intresting works by varius wrighters
+    that has shaped my philosophy and values in some way.
+  </p>
+  <br />
+  <Link name='Bitcoin whitepaper' url='/pdf/bitcoin.pdf' r={true} /><br />
+  <Link name='The last question' url='/pdf/Issac_asimov.pdf' r={true} /><br />
+  <Link
+    name='Industrial Society and Its Future'
+    url='/pdf/kaczynski.pdf'
+    r={true}
+  /><br />
 </Layout>
