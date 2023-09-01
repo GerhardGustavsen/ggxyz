@@ -8,6 +8,6 @@ export default defineConfig({
   integrations: [react(), tailwindIntegration()],
   markdown: {
     remarkPlugins: ['remark-math'],
-    rehypePlugins: [['rehype-katex']],
+    rehypePlugins: ['rehype-katex'],
   },
 });
