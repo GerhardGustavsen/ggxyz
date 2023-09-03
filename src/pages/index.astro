@@ -1,8 +1,9 @@
 ---
 import '../layouts/main.scss';
 import Stack from '../components/sidebar/stack';
-const path = Astro.url.pathname;
+import Link from '../components/links/web.astro';
 import Logo from '/favicon.svg';
+const path = Astro.url.pathname;
 ---
 
 <html lang='en'>
@@ -21,7 +22,7 @@ import Logo from '/favicon.svg';
         html = document.documentElement;
 
       var height =
-        Math.max(
+        Math.min(
           body.scrollHeight,
           body.offsetHeight,
           html.clientHeight,
@@ -240,7 +241,10 @@ import Logo from '/favicon.svg';
         class='bg-bgDark text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute'
       >
         <Stack path={path} />
-        <img class='mr-4 mt-[-1em] mb-3 float-right' width='30px' src={Logo} />
+        <div class='p-1 pl-4 mb-3'>
+          <Link name='GitHub' url='github.com/GerhardGustavsen/ggxyz/' />
+          <img class='mr-[1em] float-right' width='30px' src={Logo} />
+        </div>
       </div><canvas
         id='canvas'
         class='w-[100vw] h-[100vh] overflow-hiddens static'></canvas>
