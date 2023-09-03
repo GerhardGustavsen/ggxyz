@@ -40,16 +40,18 @@ import Logo from '/favicon.svg';
       const hr = height / width;
 
       //if phone:
-      let easy = 0;
+      let easy = 1;
       if (hr > 1) {
-        easy = 10;
+        easy = 0.1;
       }
       //choose pixl count:
-      let pixNum = 300000 / easy;
+      const pixNum = 300000 * easy;
 
       //distribute pixels
       canvas.width = Math.sqrt(pixNum / hr);
       canvas.height = hr * canvas.width;
+
+      console.log(pixNum);
 
       //Random functions:
       function rand(n: number) {
@@ -75,14 +77,12 @@ import Logo from '/favicon.svg';
 
       document.ontouchstart = function () {
         isTouchDown = true;
-        e.preventDefault();
       };
       document.onmousedown = function () {
         isMouseDown = true;
       };
       document.ontouchend = function () {
         isTouchDown = false;
-        e.preventDefault();
       };
       document.onmouseup = function () {
         isMouseDown = false;
@@ -90,6 +90,8 @@ import Logo from '/favicon.svg';
       document.addEventListener(
         'pointermove',
         function onMouseover(e) {
+          e.preventDefault();
+
           cursorX = Math.round(e.clientX / mouseratio);
           cursorY = Math.round(e.clientY / mouseratio);
         },
@@ -164,12 +166,13 @@ import Logo from '/favicon.svg';
         }
       }
 
-      const freq = ((1 / 120) * easy) / 8;
+      const freq = 1 / 120 / (easy * 6);
       const voidThickness = 50;
       let distance = 70;
       const distMax = 350;
       const distMin = 70;
       const darkRings = 3;
+      const menu = document.getElementById('menu') as HTMLElement;
 
       let z = 0;
       let i = 0;
@@ -214,10 +217,14 @@ import Logo from '/favicon.svg';
           if (isMouseDown || isTouchDown) {
             d = d + (dmax - d) * 0.1;
             distance = distance + (distMax - distance) * 0.01;
+
+            menu.style.backgroundColor = 'rgba(0,0,0,0.5)';
           } else {
             d = d - (dmax - d) * 0.1 - 3;
             if (d < 0) d = 0;
             distance = distance - (distance - distMin) * 0.05;
+
+            menu.style.backgroundColor = '#222222';
           }
 
           c.putImageData(pix, 0, 0);
@@ -232,7 +239,8 @@ import Logo from '/favicon.svg';
   <body>
     <main>
       <div
-        class='bg-bgDark text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute hover:bg-[rgba(0,0,0,0.5)]'
+        id='menu'
+        class='bg-bgDark text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute'
       >
         <Stack path={path} />
         <img class='mr-4 mt-[-1em] mb-3 float-right' width='30px' src={Logo} />
