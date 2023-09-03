@@ -1,20 +1,238 @@
 ---
-// Component Imports
-import Layout from '../layouts/main.astro';
+import '../layouts/main.scss';
 import Stack from '../components/sidebar/stack';
-import AstroLogo from '../components/links/astro.astro';
 const path = Astro.url.pathname;
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import Logo from '/favicon.svg';
 ---
 
-<Layout>
-  <p class='w-[80%] p-6'>
-    Hi, and welcome to my small corner of the internett. I am generally
-    intrested in things and have long needed a space to document my projects and
-    thoughts. This will be that space. Also check out my friends pages under the
-    'links' folder. \n\nThanks for stopping by!
-  </p>
-  <Stack path={path} /><AstroLogo />
-</Layout>
+<html lang='en' class='bg-bgLight patternDark'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <script>
+      //defining canvas element:
+      const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+      const c = canvas.getContext('2d')!;
+
+      // Get document size:
+      var body = document.body,
+        html = document.documentElement;
+
+      var height =
+        Math.max(
+          body.scrollHeight,
+          body.offsetHeight,
+          html.clientHeight,
+          html.scrollHeight,
+          html.offsetHeight
+        ) + 0;
+      var width = Math.max(
+        body.scrollWidth,
+        body.offsetWidth,
+        html.clientWidth,
+        html.scrollWidth,
+        html.offsetWidth
+      );
+
+      //find ratio:
+      const hr = height / width;
+
+      //choose pixl count:
+      const pixNum = 500000;
+
+      //distribute pixels
+      canvas.width = Math.sqrt(pixNum / hr);
+      canvas.height = hr * canvas.width;
+
+      //Random functions:
+      function rand(n: number) {
+        return Math.floor(Math.random() * (n - n / 2 + 1)) + n / 2;
+      }
+
+      //permutations:
+      const p = [];
+
+      for (let i = 0; i < 511; i++) {
+        p[i] = Math.floor(Math.random() * 255);
+      }
+
+      //Mouse event:
+      let cursorX = 100;
+      let cursorY = 100;
+      let d = 0;
+      const dmax = Math.min(canvas.width / 2, canvas.height / 2);
+
+      let isMouseDown = false;
+      let isTouchDown = false;
+      const mouseratio = width / canvas.width;
+
+      document.ontouchstart = function () {
+        isTouchDown = true;
+      };
+      document.onmousedown = function () {
+        isMouseDown = true;
+      };
+      document.ontouchend = function () {
+        isTouchDown = false;
+      };
+      document.onmouseup = function () {
+        isMouseDown = false;
+      };
+      document.addEventListener(
+        'pointermove',
+        function onMouseover(e) {
+          cursorX = Math.round(e.clientX / mouseratio);
+          cursorY = Math.round(e.clientY / mouseratio);
+        },
+        0
+      );
+
+      function noise(x, y, z) {
+        const X = Math.floor(x) & 255,
+          Y = Math.floor(y) & 255,
+          Z = Math.floor(z) & 255;
+        x -= Math.floor(x);
+        y -= Math.floor(y);
+        z -= Math.floor(z);
+        const u = fade(x),
+          v = fade(y),
+          w = fade(z);
+        const A = p[X] + Y,
+          AA = p[A] + Z,
+          AB = p[A + 1] + Z,
+          B = p[X + 1] + Y,
+          BA = p[B] + Z,
+          BB = p[B + 1] + Z;
+        return lerp(
+          w,
+          lerp(
+            v,
+            lerp(u, grad(p[AA], x, y, z), grad(p[BA], x - 1, y, z)),
+            lerp(u, grad(p[AB], x, y - 1, z), grad(p[BB], x - 1, y - 1, z))
+          ),
+          lerp(
+            v,
+            lerp(
+              u,
+              grad(p[AA + 1], x, y, z - 1),
+              grad(p[BA + 1], x - 1, y, z - 1)
+            ),
+            lerp(
+              u,
+              grad(p[AB + 1], x, y - 1, z - 1),
+              grad(p[BB + 1], x - 1, y - 1, z - 1)
+            )
+          )
+        );
+      }
+
+      function fade(t) {
+        return t * t * t * (t * (t * 6 - 15) + 10);
+      }
+
+      function lerp(t, a, b) {
+        return a + t * (b - a);
+      }
+
+      function grad(hash, x, y, z) {
+        const h = hash & 15;
+        const u = h < 8 ? x : y,
+          v = h < 4 ? y : h == 12 || h == 14 ? x : z;
+        return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
+      }
+
+      const pix = c.createImageData(canvas.width, canvas.height);
+
+      //fill data:
+      let inc = 0;
+      for (var y = 0; y < canvas.height; y++) {
+        for (var x = 0; x < canvas.width; x++) {
+          pix.data[inc++] = 255;
+          pix.data[inc++] = 255;
+          pix.data[inc++] = 255;
+          //Alpha:
+          pix.data[inc++] = 255;
+        }
+      }
+
+      const freq = 1 / 120;
+      const voidThickness = 50;
+      const distance = 70;
+      const darkRings = 3;
+
+      let z = 0;
+      let i = 0;
+      function loop() {
+        setTimeout(function () {
+          z += 0.002;
+          i = 0;
+          for (let y = 0; y < canvas.height; y++) {
+            for (let x = 0; x < canvas.width; x++) {
+              const val = parseInt(
+                Math.abs(noise(x * freq, y * freq, z)) * 500
+              );
+
+              //if cursor drag:
+              const cX = x - cursorX;
+              const cY = y - cursorY;
+              if (d != 0 && cX * cX + cY * cY < (d * d) / 4) {
+                pix.data[i * 4 + 0] = 255 - 120 * (val / 255);
+                pix.data[i * 4 + 1] = 255 - val;
+                pix.data[i * 4 + 2] = 255;
+              } else {
+                let brightness = 155;
+
+                if (val % (distance * darkRings) < 10) {
+                  brightness = 300;
+                }
+
+                const stripeVal =
+                  brightness -
+                  Math.min(val % distance, distance - (val % distance)) *
+                    voidThickness;
+
+                pix.data[i * 4 + 0] = stripeVal;
+                pix.data[i * 4 + 1] = stripeVal;
+                pix.data[i * 4 + 2] = stripeVal;
+              }
+
+              i++;
+            }
+          }
+
+          if (isMouseDown || isTouchDown) {
+            if (d < dmax) {
+              d = d + (dmax - d) * 0.1;
+            }
+          } else {
+            if (d > 0) {
+              d = d - (dmax - d) * 0.1 - 3;
+              if (d < 0) d = 0;
+            }
+          }
+
+          c.putImageData(pix, 0, 0);
+          window.requestAnimationFrame(loop);
+        }, 20);
+      }
+
+      c.putImageData(pix, 0, 0);
+      loop();
+    </script>
+  </head>
+  <body>
+    <main>
+      <div
+        class='bg-bgDark text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute hover:bg-[rgba(0,0,0,0.5)]'
+      >
+        <Stack path={path} />
+        <img class='mr-4 mt-[-1em] mb-3 float-right' width='30px' src={Logo} />
+      </div><canvas
+        id='canvas'
+        class='w-[100vw] border-[1px] border-accent h-[100vh] overflow-hiddens static'
+      ></canvas>
+    </main>
+  </body>
+</html>
