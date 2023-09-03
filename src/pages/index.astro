@@ -39,13 +39,12 @@ import Logo from '/favicon.svg';
       //find ratio:
       const hr = height / width;
 
-      //if phone:
-      let easy = 1;
-      if (hr > 1) {
-        easy = 0.1;
-      }
       //choose pixl count:
-      const pixNum = 300000 * easy;
+      let pixNum = 300000;
+      //if phone:
+      if (hr > 1) {
+        pixNum = 100000;
+      }
 
       //distribute pixels
       canvas.width = Math.sqrt(pixNum / hr);
@@ -166,7 +165,7 @@ import Logo from '/favicon.svg';
         }
       }
 
-      const freq = 1 / 120 / (easy * 6);
+      const freq = 1 / 120;
       const voidThickness = 50;
       let distance = 70;
       const distMax = 350;
