@@ -236,7 +236,7 @@ import Logo from '/favicon.svg';
     </script>
   </head>
   <body>
-    <main>
+    <main class='h-[100%] overflow-hidden'>
       <div
         id='menu'
         class='bg-bgDark text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute'
@@ -245,7 +245,7 @@ import Logo from '/favicon.svg';
         <img class='mr-4 mt-[-1em] mb-3 float-right' width='30px' src={Logo} />
       </div><canvas
         id='canvas'
-        class='w-[100vw] h-[100vh] overflow-hiddens static'></canvas>
+        class='w-[100vw] h-[100%] overflow-hiddens static'></canvas>
     </main>
   </body>
 </html>
