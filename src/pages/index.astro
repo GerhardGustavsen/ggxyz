@@ -75,12 +75,14 @@ import Logo from '/favicon.svg';
 
       document.ontouchstart = function () {
         isTouchDown = true;
+        e.preventDefault();
       };
       document.onmousedown = function () {
         isMouseDown = true;
       };
       document.ontouchend = function () {
         isTouchDown = false;
+        e.preventDefault();
       };
       document.onmouseup = function () {
         isMouseDown = false;
