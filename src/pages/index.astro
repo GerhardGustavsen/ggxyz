@@ -68,9 +68,15 @@ const path = Astro.url.pathname;
       let isTouchDown = false;
       const mouseratio = width / canvas.width;
 
-      document.ontouchstart = function () {
-        isTouchDown = true;
-      };
+      document.addEventListener(
+        'touchstart',
+        function ontouchstart(e) {
+          cursorX = Math.round(e.touches[0].clientX / mouseratio);
+          cursorY = Math.round(e.touches[0].clientY / mouseratio);
+          isTouchDown = true;
+        },
+        0
+      );
       document.onmousedown = function () {
         isMouseDown = true;
       };
