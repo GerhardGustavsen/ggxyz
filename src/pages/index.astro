@@ -213,7 +213,7 @@ const path = Astro.url.pathname;
             d = d + (dmax - d) * 0.1;
 
             distance = distance - (distance - distMin) * 0.05;
-            zp = zp + (zMax - zp) * 0.01;
+            //zp = zp + (zMax - zp) * 0.01;
 
             menu.style.backgroundColor = 'rgba(0,0,0,0.5)';
           } else {
@@ -221,7 +221,7 @@ const path = Astro.url.pathname;
             if (d < 0) d = 0;
 
             distance = distance + (distMax - distance) * 0.01;
-            zp = zp - (zp - zMin) * 0.1;
+            //zp = zp - (zp - zMin) * 0.1;
 
             menu.style.backgroundColor = '#222222';
           }
