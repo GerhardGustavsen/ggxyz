@@ -21,7 +21,7 @@ const path = Astro.url.pathname;
       const body = document.body,
         html = document.documentElement;
 
-      const height = Math.min(html.clientHeight);
+      const height = html.clientHeight;
       const width = Math.max(
         body.scrollWidth,
         body.offsetWidth,
@@ -43,9 +43,8 @@ const path = Astro.url.pathname;
       //distribute pixels
       canvas.width = Math.sqrt(pixNum / hr);
       canvas.height = hr * canvas.width;
-
-      console.log('ph: ' + height + ',pw: ' + width);
-      console.log('ch: ' + canvas.height + ',cw: ' + canvas.width);
+      canvas.style.width = ' ' + width + 'px';
+      canvas.style.height = ' ' + height + 'px';
 
       //Random functions:
       function rand(n: number) {
@@ -236,7 +235,7 @@ const path = Astro.url.pathname;
     </script>
   </head>
   <body>
-    <main class='bg-bgLight patternDark'>
+    <main id='main' class='bg-bgLight patternDark overflow-hidden'>
       <div
         id='menu'
         class='bg-bgDark text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute'
@@ -246,8 +245,7 @@ const path = Astro.url.pathname;
           <Link name='GitHub' url='github.com/GerhardGustavsen/ggxyz/' />
           <img class='mr-[1em] float-right' width='30px' src={Logo} />
         </div>
-      </div><canvas id='canvas' class='w-[100vw] overflow-hiddens static'
-      ></canvas>
+      </div><canvas id='canvas' class='overflow-hidden static'></canvas>
     </main>
   </body>
 </html>
