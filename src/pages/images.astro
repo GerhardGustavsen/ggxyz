@@ -8,7 +8,7 @@ let base = import.meta.env.PROD
   : 'http://localhost:3000';
 
 const imgs: string[] = [];
-const dirs: string[] = fg.sync('public/images/**', {
+const dirs: string[] = fg.sync('public/**', {
   onlyDirectories: true,
 });
 for (const dir in dirs) {
