@@ -6,7 +6,7 @@ date: 2023-08-31
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
 
-![omega verksted](/src/images/projects/rfid/omega.jpg)
+![omega verksted](/images/projects/rfid/omega.jpg)
 
 ## Project
 There is a door. I will not tell where this door is for security concern, but whats importent to know is that the door is somtimes locked. This is an anoiance as not manny people has keys to this door and is relient on getting a person on the inside to open. This is cumbersome.
@@ -20,11 +20,11 @@ I was originally going to use an arduino UNO as I had one lying around. Arduinoe
 
 This ment that I would use under 20% of the avalible storage space. I started connecting the Arduino UNO, but quicly found it was broken as it did not take anny input. Therefore I went on my way to buy a new onw. Hoverver on talking at some of the knolageable people from [omegav](omegav.no) I was told about the esp32 bord. This is a smaller bord than arduno, but it had atleest 2MiB of non-volitile flash memory [(maby 16MiB)](https://www.esp32.com/viewtopic.php?t=4086) whitch is mucth more than the arduino-UNO. It aso had suport for blutooth and wifi, somthing i found quite neat. But the reson i ended upp going with this board instead was simply prize. Its cheap.  
 
-![eps32](/src/images/projects/rfid/esp.jpg)
+![eps32](/images/projects/rfid/esp.jpg)
 
 Configuring this bord to work with my laptop was a bit of a job. I needed to give read wright acess to the USB device, but not mount it. Sothing I found odd. I also needed the [arduino](https://wiki.archlinux.org/title/Arduino) package and ch341 [module](https://wiki.archlinux.org/title/Kernel_module). I want to configure [VS code](https://code.visualstudio.com/) to debugg my arduino code so I can use a familliar IDE, but as I constantly beleve Il move to [neovim](https://neovim.io/) every weekend, I found it not worth it to set upp. Conclution: coding in Arduino IDE is a nightmare. / I love [prettier](https://prettier.io/).  
 
-![wires](/src/images/projects/rfid/wire.jpg)
+![wires](/images/projects/rfid/wire.jpg)
 
 ## Wiering
 The wiereing for the project was a bit greak to me. I had gotten all the components I thought I needed. One rfid scanner, a relay, a breadboard and some wires and buttons. I ended upp following this [guide](https://esp32io.com/tutorials/esp32-rfid-nfc) for connecting the rfid scanner. It uses another versjon of the esp32 than me, with other locations of the prots, but the ports are mostly the same and it was quie ok to adapt the guide to my needs. After I got the rfid scanner to work I connected up the relay and a button to hold for regestring new cards.  

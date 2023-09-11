@@ -1,11 +1,10 @@
 ---
 import Layout from '../layouts/main.astro';
 import { Image } from 'astro:assets';
-import Img from '../images/me.jpg';
 import fg from 'fast-glob';
 
 const imgs: string[] = [];
-const dirs: string[] = fg.sync('./src/images/**', {
+const dirs: string[] = fg.sync('public/images/**', {
   onlyDirectories: true,
 });
 for (const dir in dirs) {
@@ -13,6 +12,10 @@ for (const dir in dirs) {
   const png: string[] = fg.sync(dirs[dir] + '/*.png');
   const web: string[] = fg.sync(dirs[dir] + '/*.webp');
   imgs.push(...jpg, ...png, ...web);
+}
+
+for (const img in imgs) {
+  imgs[img] = imgs[img].substr(imgs[img].indexOf('/') + 1);
 }
 
 const imgs1 = [];
@@ -28,9 +31,6 @@ while (true) {
   if (i >= imgs.length) break;
   imgs3.push(imgs[i++]);
 }
-
-const m = Math.floor(Math.random() * 5);
-console.log(m);
 ---
 
 <Layout>
