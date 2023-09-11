@@ -3,6 +3,10 @@ import Layout from '../layouts/main.astro';
 import { Image } from 'astro:assets';
 import fg from 'fast-glob';
 
+let base = import.meta.env.PROD
+  ? 'https://gergus.no/'
+  : 'http://localhost:3000';
+
 const imgs: string[] = [];
 const dirs: string[] = fg.sync('public/images/**', {
   onlyDirectories: true,
@@ -15,7 +19,7 @@ for (const dir in dirs) {
 }
 
 for (const img in imgs) {
-  imgs[img] = imgs[img].substr(imgs[img].indexOf('/') + 1);
+  imgs[img] = '/' + imgs[img].substr(imgs[img].indexOf('/') + 1);
 }
 
 const imgs1 = [];
@@ -38,7 +42,7 @@ while (true) {
     <div class='flex-col mr-3'>
       {
         imgs1.map((img) => (
-          <a href={img}>
+          <a href={base + img}>
             <Image
               class='mb-3  border-accent hover:border-[1px]'
               src={img}
@@ -53,7 +57,7 @@ while (true) {
     <div class='flex-col mr-3'>
       {
         imgs2.map((img) => (
-          <a href={img}>
+          <a href={base + img}>
             <Image
               class='mb-3  border-accent hover:border-[1px]'
               src={img}
@@ -68,7 +72,7 @@ while (true) {
     <div class='flex-col'>
       {
         imgs3.map((img) => (
-          <a href={img}>
+          <a href={base + img}>
             <Image
               class='mb-3 border-accent hover:border-[1px]'
               src={img}
