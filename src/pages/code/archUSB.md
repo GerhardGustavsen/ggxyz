@@ -5,7 +5,7 @@ date: 2023-08-17
 ---
 
 
-![Usb from chain](/images/code/archUSB/usbCool.jpg)
+![Usb from chain](/src/images/code/archUSB/usbCool.jpg)
 
 ## Background
 In 2020, I started Informatics at NTNU. There, I quickly joined the development group [Dotkom](https://old.online.ntnu.no/#!about/dotkom). We were responsible for maintaining the website [online.no](https://old.online.ntnu.no/) and our focus was modern web development. However, I probably learned much more about operating systems and linux, than any web development during this time. A student some years ahead of me got me to install Linux as a dual boot on my laptop. Little did Anhkha know what he had started. 
@@ -37,7 +37,7 @@ To address some of these problems, I needed to think thoroughly about what USB d
 
 I ended up going for a SanDisk 128GB Ultra Fit USB 3.1 Flash Drive. This drive is fast and small. It has 128GB, which was more than enough for my needs. It also had a small profile and therefore would sit almost flush with my computer.
 
-![Sandisk Ultra fit](/images/code/archUSB/sandisk.jpg)
+![Sandisk Ultra fit](/src/images/code/archUSB/sandisk.jpg)
 
 There is a good guide on removable Arch systems on the Arch Wiki. I followed [this](https://wiki.archlinux.org/title/Install_Arch_Linux_on_a_removable_medium) guide and improvised from some other sources. The system I ended up with was quite lightweight and efficient, with headless start and an i3 tiling manager. I really thought the project was a success and used the removable Arch USB as my main development system for well over a year afterward.
 
@@ -50,11 +50,11 @@ As far as I understand, the way I set up the system made the Linux kernel load o
 ### Swap partition
 Perhaps the most interesting configuration was that I omitted the swap partition. A swap partition is a space on the disk that can act as RAM if the conventional RAM is full. This is handy as you can use more memory-intensive applications with less built-in RAM, but this comes at a cost of speed, obviously. I only have a limited number of read and write cycles on the USB drive, so I decided not to create any swap partition. I don't know how many more read-write cycles the built-in SSD of the laptop could handle, and I may have been wrong to omit the swap partition based on this justification alone. However, as I used the drive, I realized that the drive became quite warm, and I think I would have exacerbated this problem by having a swap partition.
 
-![Usb in laptop](/images/code/archUSB/usb.jpg)
+![Usb in laptop](/src/images/code/archUSB/usb.jpg)
 
 ## Today
 As of writing this article, I am still on Arch, but I am now back to a normal dual-boot system. I used the removable USB until, as before, I managed to break it by tinkering with some commands I did not completely understand. I am now much more sturdy with Arch and Linux in general. I later bought a ThinkPad 480s and installed the [LARBS](https://larbs.xyz/) shell script to provide me with an opinionated program assortment. I have modified LARBS quite a bit since installing it, and I hope to one day fork the LARBS distro and create GARBS.
 
 Using a Linux distro like Arch has taught me a lot. Obviously, a lot about how an operating system works, but also some more subtle things. I have learned how little I felt like I owned my computer when using Windows. It might sound a bit pretentious, but it's true. I do not look at my computer as this completely black box anymore. I can fix it, and I can (to a certain point) understand it. It's also incredibly liberating to be able to choose when and what to update. I own my computer, and it's not the other way around. Lastly, the process has made me fall in love with the philosophy of open source. It goes deeper than just creating the coolest looking desktop setup and having the best tiling managers. I believe this love of open source has seeped into other parts of my mind and shaped a good portion of my philosophy. This whole process has pushed me towards a fully open source system, and I truly think there is no way back to Windows now. I still keep a small partition with Windows on my machine, but I find myself using it less and less. Now, I may only boot into it once every other month.
 
-![thinkpad](/images/code/archUSB/thinkpad.jpg)
+![thinkpad](/src/images/code/archUSB/thinkpad.jpg)

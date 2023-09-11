@@ -6,6 +6,7 @@ import tailwindIntegration from '@astrojs/tailwind';
 export default defineConfig({
   // Enable React to support React JSX components.
   integrations: [react(), tailwindIntegration()],
+  experimental: { assets: true },
   markdown: {
     remarkPlugins: ['remark-math'],
     rehypePlugins: ['rehype-katex'],

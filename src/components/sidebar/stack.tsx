@@ -8,6 +8,7 @@ const Stack: React.FC<Props> = ({ path }) => (
   <div className='text-xl md:text-base'>
     <Dir path={path} url='/me' />
     <Dir path={path} url='/blog' />
+    <Dir path={path} url='/images' />
     <Dir path={path} url='/code' />
     <Dir path={path} url='/novels' />
     <Dir path={path} url='/projects' />
