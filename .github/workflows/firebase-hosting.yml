@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PROD: true
+      LASTFM_USERNAME: gegu2902
+      LASTFM_APIKEY: ${{ secrets.LASTFM_APIKEY }}
     steps:
       - uses: actions/checkout@v2
       - run: yarn install && yarn build
