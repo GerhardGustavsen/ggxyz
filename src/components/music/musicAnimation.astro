@@ -1,23 +1,21 @@
 ---
 const columbs = 4;
-const width = 1;
-const height = 3;
 ---
 
 <div class=`flex`>
   {
     Array.from({ length: columbs }, (_, i) => (
-      <div class={`relative w-[${width}em]`}>
+      <div class={`relative w-[1em]`}>
         <svg viewBox='0 0 15 45' xmlns='http://www.w3.org/2000/svg'>
           <line
             x1='0'
             x2='0'
             y1='0em'
-            y2={`${height}em`}
+            y2='3em'
             stroke='#8000ff'
-            stroke-width={`${width * 1.8}em`}
+            stroke-width={`1.7em`}
             style={`
-            stroke-dasharray: ${height}em;
+            stroke-dasharray: 3em;
             animation: dash ${
               0.3 + Math.random() / 2
             }s linear alternate infinite;
