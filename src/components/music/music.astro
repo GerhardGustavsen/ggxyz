@@ -1,116 +1,119 @@
 ---
-import Ani from './musicAnimation.astro'
-
-const user = import.meta.env.LASTFM_USERNAME;
-const apiKey = import.meta.env.LASTFM_APIKEY;
-
-interface LastfmTrack {
-  artist: {
-    mbid: string;
-    '#text': string;
-  };
-  streamable: string;
-  image: {
-    size: string;
-    '#text': string;
-  }[];
-  mbid: string;
-  album: {
-    mbid: string;
-    '#text': string;
-  };
-  name: string;
-  '@attr': {
-    nowplaying: string;
-  };
-  url: string;
-}
-
-interface LastfmRecentTracks {
-  recenttracks: {
-    track: LastfmTrack[];
-    '@attr': {
-      user: string;
-      totalPages: string;
-      page: string;
-      perPage: string;
-      total: string;
-    };
-  };
-}
-
-export const makeUrl = (
-  url: string,
-  params: Record<string, string | number | boolean> = {}
-): string => {
-  const newUrl = new URL(url);
-  for (const [key, value] of Object.entries(params)) {
-    newUrl.searchParams.set(key, value.toString());
-  }
-  return newUrl.toString();
-};
-
-const getRecentTracks = async (
-  username: string,
-  apiKey: string,
-  limit: number
-): Promise<LastfmRecentTracks> => {
-  const res = await fetch(
-    makeUrl(`https://ws.audioscrobbler.com/2.0/`, {
-      user: username,
-      api_key: apiKey,
-      format: 'json',
-      method: 'user.getrecenttracks',
-      limit,
-    })
-  );
-  if (!res.ok)
-    throw new Error(`Status ${res.status} while fetching recent tracks`);
-  return (await res.json()) as LastfmRecentTracks;
-};
-
-const lastFm = await getRecentTracks(user, apiKey, 5);
-
-let lastTracks = lastFm.recenttracks.track;
-const last = lastTracks[0];
-lastTracks.shift(); // remove first element
-
-const now = (last['@attr'] && last['@attr'].nowplaying)
-
-const listening = now ? 'Now listening to:' : 'Last listened to:'
-
+import Ani from './musicAnimation.astro';
 ---
 
-<div>
-  <div class='flex m-3'>
-    <a class='mr-3 hover:border-[1px] border-accent' href={last.url}>
-      <img src={last.image[2]['#text']} />
-    </a>
-    <div class="relative">
-	    <h1>{listening}</h1>
-      <a href={last.url}><h2 class="text-[#02ebfc] font-bold">{last.name}</h2></a>
-      {(last.album['#text'] != last.name) && <p>from: <span class="text-[#02ebfc]" >{last.album['#text']}</span></p>}
-      <p>by: <span class="text-[#02ebfc]" >{last.artist['#text']}</span></p>
-	    {now && <div class="absolute bottom-0"><Ani/></div>}
-    </div>
+<div class='flex m-3 ml-0'>
+  <a id='LastUrl' class='mr-3 hover:border-[1px] border-accent'>
+    <img
+      id='SongArt'
+      src='https://lastfm.freetls.fastly.net/i/u/174s/758bd204c8b45e150d03e02ed33e79b6.png'
+    />
+  </a>
+  <div class='relative'>
+    <h1 id='MusicTitle'>loading...</h1>
+    <a id='SongName' class='text-[#02ebfc] font-bold'>song name</a>
+    <p id='SongFromInvi' class=''>
+      from: <span id='SongFrom' class='text-[#02ebfc]'>album</span>
+    </p>
+    <p>by: <span id='SongBy' class='text-[#02ebfc]'>artist</span></p>
+    <div id='SongNow' class='absolute bottom-0'><Ani /></div>
   </div>
-
-  {
-    lastTracks.map((track) => {
-      return (
-	  	<!-- prettier-ignore -->
-        <a
-          class='block [&:hover>span]:bg-accent [&:hover>span]:text-[#02ebfc]'
-          href={track.url}
-        ><span 
-		  class='text-accent font-bold'>[</span><span 
-		  class='text-[#02ebfc] underline '>{track.name}</span><span 
-		  class='text-accent font-bold'> - </span><span 
-		  class='text-green-500'>{track.artist['#text']}</span><span 
-		  class='text-accent font-bold'>]</span>
-        </a>
-      );
-    })
-  }
-  <p class="mt-3">stats from <a class="underline" href="https://www.last.fm/user/gegu2902">last.fm<a></p>
 </div>
+
+<script>
+  interface LastfmTrack {
+    artist: {
+      mbid: string;
+      '#text': string;
+    };
+    streamable: string;
+    image: {
+      size: string;
+      '#text': string;
+    }[];
+    mbid: string;
+    album: {
+      mbid: string;
+      '#text': string;
+    };
+    name: string;
+    '@attr': {
+      nowplaying: string;
+    };
+    url: string;
+  }
+
+  interface LastfmRecentTracks {
+    recenttracks: {
+      track: LastfmTrack[];
+      '@attr': {
+        user: string;
+        totalPages: string;
+        page: string;
+        perPage: string;
+        total: string;
+      };
+    };
+  }
+
+  const makeUrl = (
+    url: string,
+    params: Record<string, string | number | boolean> = {}
+  ): string => {
+    const newUrl = new URL(url);
+    for (const [key, value] of Object.entries(params)) {
+      newUrl.searchParams.set(key, value.toString());
+    }
+    return newUrl.toString();
+  };
+
+  const getRecentTracks = async (
+    limit: number
+  ): Promise<LastfmRecentTracks> => {
+    const res = await fetch(
+      makeUrl(`https://ws.audioscrobbler.com/2.0/`, {
+        user: 'gegu2902',
+        api_key: 'd5f337dc703f4cf80c713f29542cc2a2',
+        format: 'json',
+        method: 'user.getrecenttracks',
+        limit,
+      })
+    );
+    if (!res.ok)
+      throw new Error(`Status ${res.status} while fetching recent tracks`);
+    return (await res.json()) as LastfmRecentTracks;
+  };
+
+  const updateSong = async () => {
+    const lastFm = await getRecentTracks(1);
+    const last = lastFm.recenttracks.track[0];
+
+    const now = last['@attr'] && last['@attr'].nowplaying;
+    const listening = now ? 'Now listening to:' : 'Last listened to:';
+
+    document.getElementById('MusicTitle').innerText = listening;
+    document.getElementById('SongName').innerText = last.name;
+    document.getElementById('SongFrom').innerText = last.album['#text'];
+    document.getElementById('SongBy').innerText = last.artist['#text'];
+    document
+      .getElementById('SongArt')
+      .setAttribute('src', last.image[2]['#text']);
+    document.getElementById('LastUrl').setAttribute('href', last.url);
+
+    if (last.name == last.album['#text']) {
+      document.getElementById('SongFromInvi').style.display = 'none';
+    } else {
+      document.getElementById('SongFromInvi').style.display = 'block';
+    }
+
+    if (now) {
+      document.getElementById('SongNow').style.display = 'block';
+    } else {
+      document.getElementById('SongNow').style.display = 'none';
+    }
+
+    setTimeout(() => updateSong(), 30000);
+  };
+
+  updateSong();
+</script>
