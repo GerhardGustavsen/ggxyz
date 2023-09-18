@@ -1,7 +1,6 @@
 ---
 import './article.scss';
 import Layout from './main.astro';
-import Logo from '/favicon.svg';
 const { frontmatter } = Astro.props;
 ---
 
@@ -21,7 +20,7 @@ const { frontmatter } = Astro.props;
             {new Date(frontmatter.date).toLocaleDateString('en-UK')}
           </p>
         </div>
-        <img class='translate-y-[-15px]' width='45px' src={Logo} />
+        <img class='translate-y-[-15px]' width='45px' src='/favicon.svg' />
       </div>
     </div>
   </div>

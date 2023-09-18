@@ -50,6 +50,16 @@ The electrical systems consisted of some key components:
 - Shore charger
 - 230V inverter
 
+I had a quite good grip on electrisity from before, but conecion together this 12 volt system was still quite challaging. The heart of the system was the 200AH battery in the back. The system is built a lot like one would build a houseboat system with a so called "house" battery. This battery is resposible for driving everything I would use for livingin the van. The regular car battery was not to be used for annything else than starting the car. In this way I inshured that the car battery would not go flat. Also a car battery is built to be able to suply a starting voltage regarless of temprature and load. This kind of starter battery is bad at beeing fully draned and it shuld be kept at almost full capacity all the time. Therefore I went eith a litzium ion battery in the back. This battery had lower inner resistance and a highter resting voltage than led or amg batteries.
+
+I wanted the dynamo in the car to charge bolth the starter battery and the house battery when I was driving, but have the circuts seperated when discharging. My first solution to this was to use a relay that messured voltage and conected the circuts when the voltage was over 14. This would only happen once the dynamo produced power. However this was sub optimal for 2 resons. Firstly the relay was designed for led batteries so the resting voltage of the litizium battery was to high for the relay to cut out. Also the dynamo in my car could supply over 200Amps, making it a bit to mucth for the relay to handle. The dynamo would only supply this current if the resistance was really low. aka when the battery was quite flat. I therefore installed a ampmeter on the suply cable and messured about 100Amps for most situations. I also installed a fuse at 200Amps, since it was the maximum my battery could take. 
+
+This worked a long while untill I one day drained the house battery compleatly. I carfully started the car, and looke at the ampmeter. It read 150Amps exsactly. I was releved and drove a little while. When I had stopped the car and went to enter the cabin in the back I felt a strong smell of burnt plastic. The fusebox for the 200Amp fuse had melted. Yes, you heard that correctly. The fuseBOX. The fuse itself was whole and well, but the plastic box had become a boiling plastic puddle on the floor. This was quite comidic as i would hope the fuse would melt before the fusebox. I later reliced that there was a shunt on the ampmeter at 150Amps. So that was the maximum it would show. A bit of a chernobyl "only 3.6roentgen" kind of moment. I guess the current was around 190Amps, but i guess il never know. 
+
+After this I installed a profecionall campervan house battery charger, supplying at most 150Amps.
+
+The rest of he build went smoother. I installed the solarpannel regulators, and a 12 volt charger that i could use to charge the car from a camper outlett from the outside. I installed the inverter for all my 230Volt needs and all the lights. I also cut a huge scarry hole in the roof and installed a maxifan for ventilation and atmosefare controll.
+
 
 ## Heating
 

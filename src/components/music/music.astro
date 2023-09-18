@@ -9,14 +9,20 @@ import Ani from './musicAnimation.astro';
       src='https://lastfm.freetls.fastly.net/i/u/174s/758bd204c8b45e150d03e02ed33e79b6.png'
     />
   </a>
-  <div class='relative'>
+  <div class='relative overflow-hidden'>
     <h1 id='MusicTitle'>loading...</h1>
-    <a id='SongName' class='text-[#02ebfc] font-bold'>song name</a>
-    <p id='SongFromInvi' class=''>
+    <a id='SongName' class='text-[#02ebfc] font-bold whitespace-nowrap'
+      >song name</a
+    >
+    <p id='SongFromInvi' class='whitespace-nowrap'>
       from: <span id='SongFrom' class='text-[#02ebfc]'>album</span>
     </p>
-    <p>by: <span id='SongBy' class='text-[#02ebfc]'>artist</span></p>
-    <div id='SongNow' class='absolute bottom-0'><Ani /></div>
+    <p class='whitespace-nowrap'>
+      by: <span id='SongBy' class='text-[#02ebfc]'>artist</span>
+    </p>
+    <div id='SongNow' class='absolute bottom-0 hidden'>
+      <Ani />
+    </div>
   </div>
 </div>
 
