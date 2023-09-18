@@ -65,13 +65,21 @@ The rest of he build went smoother. I installed the solarpannel regulators, and 
 
 ![img](/images/projects/vanbuild/cursed.jpg)
 
+I decided on a diselheater for keeping warm. The heater slowly burns disel and heats upp air. The warm air circulation is compleatly seperated from the burning and exsaugst. This makes it an ideal heat source as it makes it safter agiant CO posening and it will now generate anny water vapor. The diselheater was the last thing I installed and a real hassle to get mounted. The heater became quite warm, si I mountet it on a wooden board to protect the floormat. I mounted the heater under the passenger seat and cut some holes for the exsaughst and air intake. It was extreamly satasfying when I finally turned it on. It turnes out living in a van without heat is quite hard. 
+
 ## Water & Cooking
 
 ![img](/images/projects/vanbuild/food.jpg)
 
+The water system in the van was quite simple. I installed a 20Litre tank upp above the sink. This made the sink gravity fead. It was nice having water even if the power was gone. However, instaling the tank right above the sink made for a quite tiersome experience washing upp.
+
+For making food I installed 2 gas topps. I decided on not installing an oven, mostly because a lack of time. The burners worked nicly and used suprizingly little gas. It was really cosy turning on the stove with mathes, and seeing the clear blue flames in the darkness. 10/10, would burn again
+
 ## Gaming?
 
 ![img](/images/projects/vanbuild/computer.jpg)
+
+I installed a gaming computer with a RTX 4080. It sounds exsactly as stupid as it is. I buildt the computer into the wall and installed a sound system with a subwoofer around it. The sound system was super nice and I ended up using it all the time. The gaming station however... yeah, not so mutch. It turnes out that you dont have too mucth time for gaming when vanlifing. Also the computer could be used for maximum 2 hours, before draining the batteries. That not really long enough for my gaming needs. So I later removed it. I also feared all the shaking would end upp breaking the machine.  
 
 ## Car stuff
 
