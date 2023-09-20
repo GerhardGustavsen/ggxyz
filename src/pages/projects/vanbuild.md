@@ -5,7 +5,6 @@ date: 2023-09-17
 ---
 ![img](/images/projects/vanbuild/car.jpg)
 
-
 I've long wondred how i shuld document this project. In the summer of 2021 I bought a van. I then converted this van to a camper, and then procided to live fulltime in it for over halv a year. I have decided to splitt the project into 2 articles. One about the practical process of converting a van to a camper and another article about the vanlife lifestyle and my thoughts on it. This will be the article describing the build prosess. The other vanlife article can be found [here](./vanlife).
 
 ## Planning
@@ -79,20 +78,24 @@ For making food I installed 2 gas topps. I decided on not installing an oven, mo
 
 ![img](/images/projects/vanbuild/computer.jpg)
 
-I installed a gaming computer with a RTX 4080. It sounds exsactly as stupid as it is. I buildt the computer into the wall and installed a sound system with a subwoofer around it. The sound system was super nice and I ended up using it all the time. The gaming station however... yeah, not so mutch. It turnes out that you dont have too mucth time for gaming when vanlifing. Also the computer could be used for maximum 2 hours, before draining the batteries. That not really long enough for my gaming needs. So I later removed it. I also feared all the shaking would end upp breaking the machine.  
+I installed a gaming computer with a RTX 4080. It sounds exsactly as stupid as it is. I buildt the computer into the wall and installed a sound system with a subwoofer around it. The sound system was super nice and I ended up using it all the time. 
+
+The gaming station however... yeah, not so mutch. It turnes out that you dont have too mucth time for gaming when vanlifing. Also the computer could be used for maximum 2 hours before draining the batteries. That not really long enough for my gaming needs. So I later removed it. I also feared all the shaking would end upp breaking the machine.
 
 ## Car stuff
 
-1000meters
-Hold the door!
-oil & air filters
 ![img](/images/projects/vanbuild/dash.jpg)
 
+I also installed a strong expedition lightbar at the front of the van. I connected the lightbar to my normal longlights, but made it so that i had to also enable them by flipping a dashbaord switch. Im really happy about how the dash tuned out as it lookes really home made and "reodor-felgen"ish. The homemade dash contains the ampmeter for charging the house batteries, the switch for the new lightbar and some tempreture sensors as well as a voltmeter just for fun.
 
+Also, the door fell off... A cupple of weeks after I had gotten the car, I slammed the side door closed, but as it closed there was a cracking sound and the whole door fell off. Quite stressfull, but aslo kind of funny. I ended upp replacing the door slider arm as well as a cupple of ball berings.
+
+Under are some pictures of the finished van. Im really porud of this project and it is certanly the biggest project ive undertaken thus far. It taught me a lot about 12 volt systems, heating and atmofare controll, carpendry and genneral mechanics. I would absolutly recomend building a campervan o annyone that is intrested, but I might not recomend liing in it full time, but [thats](./vanlife) another story.
+
+## Images
 
 ![img](/images/projects/vanbuild/done1.jpg)
 ![img](/images/projects/vanbuild/done3.jpg)
 ![img](/images/projects/vanbuild/done4.jpg)
 
-
-![img](/images/projects/vanbuild/winter.jpg)
+★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - ★ - ☆ - 

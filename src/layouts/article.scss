@@ -17,6 +17,7 @@
 
     & > img {
       padding: 1em;
+      padding-top: 0;
       max-height: 30em;
       float: left;
       margin: auto;
@@ -30,7 +31,7 @@
   & > h2 {
     font-size: large;
     border-width: 0 0px 2px 0px;
-    margin-bottom: 0.2em;
+    margin-bottom: 1em;
   }
 
   & > h3 {
