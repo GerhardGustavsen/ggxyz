@@ -13,6 +13,9 @@ const path = Astro.url.pathname;
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <script>
       //defining canvas element:
+      const bg = document.getElementById('main') as HTMLElement;
+      bg.style.background = 'black';
+
       const canvas = document.getElementById('canvas') as HTMLCanvasElement;
       const c = canvas.getContext('2d')!;
 
@@ -29,19 +32,9 @@ const path = Astro.url.pathname;
         html.offsetWidth
       );
 
-      //find ratio:
-      const hr = height / width;
-
-      //choose pixel count:
-      let pixNum = 300000;
-      //if phone:
-      if (hr > 1) {
-        pixNum = 100000;
-      }
-
       //distribute pixels
-      canvas.width = Math.sqrt(pixNum / hr);
-      canvas.height = hr * canvas.width;
+      canvas.width = width;
+      canvas.height = height;
       canvas.style.width = ' ' + width + 'px';
       canvas.style.height = ' ' + height + 'px';
 
@@ -60,7 +53,6 @@ const path = Astro.url.pathname;
       //Mouse event:
       let cursorX = 100;
       let cursorY = 100;
-      let d = 0;
       const dmax = Math.min(canvas.width / 4, canvas.height / 4);
 
       let isMouseDown = false;
@@ -94,6 +86,7 @@ const path = Astro.url.pathname;
         0
       );
 
+      //perlin noise
       function noise(x, y, z) {
         const X = Math.floor(x) & 255,
           Y = Math.floor(y) & 255,
@@ -148,55 +141,53 @@ const path = Astro.url.pathname;
         return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
       }
 
+      //canvas data:
       const pix = c.createImageData(canvas.width, canvas.height);
 
-      //fill data:
+      //fill start data:
       let inc = 0;
       for (var y = 0; y < canvas.height; y++) {
         for (var x = 0; x < canvas.width; x++) {
-          pix.data[inc++] = 43;
-          pix.data[inc++] = 43;
-          pix.data[inc++] = 43;
-          //Alpha:
           pix.data[inc++] = 255;
+          pix.data[inc++] = 255;
+          pix.data[inc++] = 255;
+          //Alpha:
+          pix.data[inc++] = 0;
         }
       }
 
-      const freq = 1 / 120;
-      const voidThickness = 50;
-      let distance = 400;
-      const distMax = 400;
-      const distMin = 70;
+      const freq = 1 / 100;
+      const voidThickness = 40;
+      let distance = 70;
       const darkRings = 3;
-      const menu = document.getElementById('menu') as HTMLElement;
 
-      let z = 0;
-      let zp = 0.003;
-      const zMin = 0.003;
-      const zMax = 0.008;
-      let i = 0;
+      let z = 1.743546;
+      let zp = 0.0897526321;
+
+      const trailfade = 30;
+      const trail = 3;
+
+      const d = 15000;
+
+      y = 0;
       function loop() {
-        setTimeout(function () {
-          z += zp;
-          i = 0;
-          for (let y = 0; y < canvas.height; y++) {
-            for (let x = 0; x < canvas.width; x++) {
-              const val = parseInt(
-                Math.abs(noise(x * freq, y * freq, z)) * 500
-              );
+        if (isMouseDown || isTouchDown) {
+          //if cursor down
+          menu.style.backgroundColor = 'rgba(0,0,0,0.5)';
+          let i = 0;
+          for (var cy = 0; cy < canvas.height; cy++) {
+            for (var cx = 0; cx < canvas.width; cx++) {
+              const cX = cx - cursorX;
+              const cY = cy - cursorY;
+              if (d != 0 && cX * cX + cY * cY < d) {
+                const val = parseInt(
+                  Math.abs(noise(cx * freq, cy * freq, z)) * 500
+                );
 
-              //if cursor drag:
-              const cX = x - cursorX;
-              const cY = y - cursorY;
-              if (d != 0 && cX * cX + cY * cY < d * d + Math.random() * 8 * d) {
-                pix.data[i * 4 + 0] = 255 - 120 * (val / 255);
-                pix.data[i * 4 + 1] = 255 - val;
-                pix.data[i * 4 + 2] = 255;
-              } else {
                 let brightness = 155;
 
                 if (val % (distance * darkRings) < 10) {
-                  brightness = 300;
+                  brightness = 255;
                 }
 
                 const stripeVal =
@@ -204,42 +195,61 @@ const path = Astro.url.pathname;
                   Math.min(val % distance, distance - (val % distance)) *
                     voidThickness;
 
-                pix.data[i * 4 + 0] = stripeVal;
-                pix.data[i * 4 + 1] = stripeVal;
-                pix.data[i * 4 + 2] = stripeVal;
+                pix.data[i * 4 + 3] = stripeVal;
+                pix.data[i * 4 + 0] = 80;
+                pix.data[i * 4 + 1] = 0;
               }
-
               i++;
             }
           }
+          z += 0.04;
+        } else {
+          menu.style.backgroundColor = '#222222';
+          //normal behavior:
+          for (let x = 0; x < canvas.width; x++) {
+            const val = parseInt(Math.abs(noise(x * freq, y * freq, z)) * 500);
 
-          if (isMouseDown || isTouchDown) {
-            d = d + (dmax - d) * 0.1;
+            let brightness = 155;
 
-            distance = distance - (distance - distMin) * 0.05;
-            //zp = zp + (zMax - zp) * 0.01;
+            if (val % (distance * darkRings) < 10) {
+              brightness = 255;
+            }
 
-            menu.style.backgroundColor = 'rgba(0,0,0,0.5)';
-          } else {
-            d = d - (dmax - d) * 0.1 - 3;
-            if (d < 0) d = 0;
+            const stripeVal =
+              brightness -
+              Math.min(val % distance, distance - (val % distance)) *
+                voidThickness;
 
-            distance = distance + (distMax - distance) * 0.01;
-            //zp = zp - (zp - zMin) * 0.1;
+            pix.data[(x + y * canvas.width) * 4 + 3] = stripeVal;
 
-            menu.style.backgroundColor = '#222222';
+            pix.data[(x + y * canvas.width) * 4 + 0] = 80;
+            pix.data[(x + y * canvas.width) * 4 + 1] = 0;
+
+            //trail fade:
+            for (let i = trail; i < trailfade + trail; i++) {
+              let newY = y - i;
+              if (newY < 0) {
+                newY += canvas.height;
+              }
+
+              pix.data[(x + newY * canvas.width) * 4 + 0] += 500 / trailfade;
+              pix.data[(x + newY * canvas.width) * 4 + 1] += 256 / trailfade;
+            }
           }
-
-          c.putImageData(pix, 0, 0);
-          window.requestAnimationFrame(loop);
-        }, 30);
+          y++;
+          if (y > canvas.height) {
+            z += 0.1;
+            y = 0;
+          }
+        }
+        c.putImageData(pix, 0, 0);
+        setTimeout(() => loop(), 0);
       }
 
-      c.putImageData(pix, 0, 0);
       loop();
     </script>
   </head>
-  <body>
+  <body class='bg-bgLight patternDark'>
     <main id='main' class='bg-bgLight patternDark overflow-hidden'>
       <div
         id='menu'
