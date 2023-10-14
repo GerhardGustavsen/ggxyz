@@ -2,27 +2,34 @@
 import Ani from './musicAnimation.astro';
 ---
 
-<div class='flex m-3 ml-0'>
-  <a id='LastUrl' class='mr-3 hover:border-[1px] border-accent'>
-    <img
-      id='SongArt'
-      src='https://lastfm.freetls.fastly.net/i/u/174s/758bd204c8b45e150d03e02ed33e79b6.png'
-    />
-  </a>
-  <div class='relative overflow-hidden'>
-    <h1 id='MusicTitle'>loading...</h1>
-    <a id='SongName' class='text-[#02ebfc] font-bold whitespace-nowrap'
-      >song name</a
-    >
-    <p id='SongFromInvi' class='whitespace-nowrap'>
-      from: <span id='SongFrom' class='text-[#02ebfc]'>album</span>
-    </p>
-    <p class='whitespace-nowrap'>
-      by: <span id='SongBy' class='text-[#02ebfc]'>artist</span>
-    </p>
-    <div id='SongNow' class='absolute bottom-0 hidden'>
-      <Ani />
+<div>
+  <div class='flex m-3 ml-0'>
+    <a id='LastUrl' class='mr-3 hover:border-[1px] border-accent'>
+      <img
+        id='SongArt'
+        src='https://lastfm.freetls.fastly.net/i/u/174s/758bd204c8b45e150d03e02ed33e79b6.png'
+      />
+    </a>
+    <div class='relative overflow-hidden'>
+      <h1 id='MusicTitle'>loading...</h1>
+      <a id='SongName' class='text-[#02ebfc] font-bold whitespace-nowrap'
+        >song name</a
+      >
+      <p id='SongFromInvi' class='whitespace-nowrap'>
+        from: <span id='SongFrom' class='text-[#02ebfc]'>album</span>
+      </p>
+      <p class='whitespace-nowrap'>
+        by: <span id='SongBy' class='text-[#02ebfc]'>artist</span>
+      </p>
+      <div id='SongNow' class='absolute bottom-0 hidden'>
+        <Ani />
+      </div>
     </div>
+  </div>
+  <div
+    id='SongList'
+    class='flex flex-col underline whitespace-nowrap overflow-hidden max-w-[25em]'
+  >
   </div>
 </div>
 
@@ -91,31 +98,60 @@ import Ani from './musicAnimation.astro';
   };
 
   const updateSong = async () => {
-    const lastFm = await getRecentTracks(1);
+    const numSongs = 8;
+
+    const lastFm = await getRecentTracks(numSongs);
     const last = lastFm.recenttracks.track[0];
 
     const now = last['@attr'] && last['@attr'].nowplaying;
     const listening = now ? 'Now listening to:' : 'Last listened to:';
 
-    document.getElementById('MusicTitle').innerText = listening;
-    document.getElementById('SongName').innerText = last.name;
-    document.getElementById('SongFrom').innerText = last.album['#text'];
-    document.getElementById('SongBy').innerText = last.artist['#text'];
+    // Last song
+    document.getElementById('MusicTitle')!.innerText = listening;
+    document.getElementById('SongName')!.innerText = last.name;
+    document.getElementById('SongFrom')!.innerText = last.album['#text'];
+    document.getElementById('SongBy')!.innerText = last.artist['#text'];
     document
-      .getElementById('SongArt')
+      .getElementById('SongArt')!
       .setAttribute('src', last.image[2]['#text']);
-    document.getElementById('LastUrl').setAttribute('href', last.url);
+    document.getElementById('LastUrl')!.setAttribute('href', last.url);
 
     if (last.name == last.album['#text']) {
-      document.getElementById('SongFromInvi').style.display = 'none';
+      document.getElementById('SongFromInvi')!.style.display = 'none';
     } else {
-      document.getElementById('SongFromInvi').style.display = 'block';
+      document.getElementById('SongFromInvi')!.style.display = 'block';
     }
 
     if (now) {
-      document.getElementById('SongNow').style.display = 'block';
+      document.getElementById('SongNow')!.style.display = 'block';
     } else {
-      document.getElementById('SongNow').style.display = 'none';
+      document.getElementById('SongNow')!.style.display = 'none';
+    }
+
+    // Song list:
+    const list = lastFm.recenttracks.track.splice(1, numSongs);
+
+    document.getElementById('SongList')!.innerHTML = '';
+    for (const i in list) {
+      const listItem = document.createElement('a');
+      const songName = document.createElement('span');
+
+      songName.innerText = list[i].name;
+      songName.style.color = '#02ebfc';
+      listItem.appendChild(songName);
+
+      if (list[i].name != list[i].album['#text']) {
+        const songAlbum = document.createElement('span');
+        const spacer = document.createElement('span');
+        spacer.innerText = ' / ';
+        spacer.style.color = 'rgb(80,00,256)';
+        songAlbum.innerText = list[i].album['#text'];
+        listItem.appendChild(spacer);
+        listItem.appendChild(songAlbum);
+      }
+
+      listItem.setAttribute('href', list[i].url);
+      document.getElementById('SongList')!.appendChild(listItem);
     }
 
     setTimeout(() => updateSong(), 30000);
