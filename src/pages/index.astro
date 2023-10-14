@@ -19,6 +19,9 @@ const path = Astro.url.pathname;
       const canvas = document.getElementById('canvas') as HTMLCanvasElement;
       const c = canvas.getContext('2d')!;
 
+      //defining menu:
+      const menu = document.getElementById('menu') as HTMLElement;
+
       // Get document size:
       const body = document.body,
         html = document.documentElement;
@@ -173,6 +176,7 @@ const path = Astro.url.pathname;
       function loop() {
         if (isMouseDown || isTouchDown) {
           //if cursor down
+          menu.style.backgroundColor = 'rgba(0,0,0,0.8)';
           let i = 0;
           for (var cy = 0; cy < canvas.height; cy++) {
             for (var cx = 0; cx < canvas.width; cx++) {
@@ -210,6 +214,8 @@ const path = Astro.url.pathname;
           cz += 0.03;
         } else {
           //normal behavior:
+          menu.style.backgroundColor = '#222222';
+
           for (let x = 0; x < canvas.width; x++) {
             const val = Math.abs(noise(x * freq, y * freq, z)) * 500;
 
@@ -257,7 +263,8 @@ const path = Astro.url.pathname;
   <body class='bg-bgLight patternDark'>
     <main id='main' class='bg-bgLight patternDark overflow-hidden'>
       <div
-        class='bg-bgDark hover:bg-[#000000c0] transition-all duration-200 text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute'
+        id='menu'
+        class='bg-bgDark transition-all duration-200 text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute'
       >
         <Stack path={path} />
         <div class='p-1 pl-4 mb-3'>
