@@ -44,7 +44,7 @@ const path = Astro.url.pathname;
       }
 
       //permutations:
-      const p = [];
+      const p: number[] = [];
 
       for (let i = 0; i < 511; i++) {
         p[i] = Math.floor(Math.random() * 255);
@@ -162,28 +162,29 @@ const path = Astro.url.pathname;
       const darkRings = 3;
 
       let z = 1.743546;
-      let zp = 0.0897526321;
+      let cz = z;
 
       const trailfade = 30;
       const trail = 3;
 
-      const d = 15000;
+      const d = 25000;
 
       y = 0;
       function loop() {
         if (isMouseDown || isTouchDown) {
           //if cursor down
-          menu.style.backgroundColor = 'rgba(0,0,0,0.5)';
           let i = 0;
           for (var cy = 0; cy < canvas.height; cy++) {
             for (var cx = 0; cx < canvas.width; cx++) {
               const cX = cx - cursorX;
               const cY = cy - cursorY;
-              if (d != 0 && cX * cX + cY * cY < d) {
-                const val = parseInt(
-                  Math.abs(noise(cx * freq, cy * freq, z)) * 500
-                );
 
+              const pitta = cX * cX + cY * cY;
+              const center = 1 - pitta / d;
+              let t = cz * center;
+              if (y <= Math.abs(cy)) t = t - 0.1;
+              if (pitta < d) {
+                const val = Math.abs(noise(cx * freq, cy * freq, t + z)) * 500;
                 let brightness = 155;
 
                 if (val % (distance * darkRings) < 10) {
@@ -196,18 +197,21 @@ const path = Astro.url.pathname;
                     voidThickness;
 
                 pix.data[i * 4 + 3] = stripeVal;
-                pix.data[i * 4 + 0] = 80;
-                pix.data[i * 4 + 1] = 0;
+
+                if (center > Math.random()) {
+                  if (pix.data[i * 4 + 0] > 80)
+                    pix.data[i * 4 + 0] = pix.data[i * 4 + 0] - 5;
+                  pix.data[i * 4 + 1] = pix.data[i * 4 + 1] - 10;
+                }
               }
               i++;
             }
           }
-          z += 0.04;
+          cz += 0.03;
         } else {
-          menu.style.backgroundColor = '#222222';
           //normal behavior:
           for (let x = 0; x < canvas.width; x++) {
-            const val = parseInt(Math.abs(noise(x * freq, y * freq, z)) * 500);
+            const val = Math.abs(noise(x * freq, y * freq, z)) * 500;
 
             let brightness = 155;
 
@@ -237,6 +241,7 @@ const path = Astro.url.pathname;
             }
           }
           y++;
+          cz = 0;
           if (y > canvas.height) {
             z += 0.1;
             y = 0;
@@ -252,8 +257,7 @@ const path = Astro.url.pathname;
   <body class='bg-bgLight patternDark'>
     <main id='main' class='bg-bgLight patternDark overflow-hidden'>
       <div
-        id='menu'
-        class='bg-bgDark text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute'
+        class='bg-bgDark hover:bg-[#000000c0] transition-all duration-200 text-fgLight w-[58%] max-w-[20em] h-fit pt-3 left-0 right-0 top-0 bottom-0 m-auto overflow-hidden absolute'
       >
         <Stack path={path} />
         <div class='p-1 pl-4 mb-3'>
