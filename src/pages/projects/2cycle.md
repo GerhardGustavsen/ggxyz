@@ -1,6 +1,6 @@
 ---
 layout: /src/layouts/article.astro
-title: Study of the 2 cycle motor
+title: Study of a 2 cycle motor
 date: 2023-08-26
 ---
 

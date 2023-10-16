@@ -140,15 +140,14 @@ import Ani from './musicAnimation.astro';
       songName.style.color = '#02ebfc';
       listItem.appendChild(songName);
 
-      if (list[i].name != list[i].album['#text']) {
-        const songAlbum = document.createElement('span');
-        const spacer = document.createElement('span');
-        spacer.innerText = ' / ';
-        spacer.style.color = 'rgb(80,00,256)';
-        songAlbum.innerText = list[i].album['#text'];
-        listItem.appendChild(spacer);
-        listItem.appendChild(songAlbum);
-      }
+      const spacer = document.createElement('span');
+      spacer.innerText = ' / ';
+      spacer.style.color = 'rgb(80,00,256)';
+
+      const songArtist = document.createElement('span');
+      songArtist.innerText = list[i].artist['#text'];
+      listItem.appendChild(spacer);
+      listItem.appendChild(songArtist);
 
       listItem.setAttribute('href', list[i].url);
       document.getElementById('SongList')!.appendChild(listItem);
