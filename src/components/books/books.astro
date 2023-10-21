@@ -1,14 +1,57 @@
 ---
+import Book from './book.astro';
+
+type BookProps = {
+  title: string;
+  author: string;
+  link: string;
+  img: string;
+};
+
+const books: BookProps[] = [
+  {
+    title: 'Contact',
+    author: 'Carl Sagan',
+    link: 'www.goodreads.com/book/show/61666.Contact',
+    img: 'contact.jpg',
+  },
+  {
+    title: 'The Three-Body Problem',
+    author: 'Cixin Liu',
+    link: 'www.goodreads.com/book/show/20518872-the-three-body-problem',
+    img: '3body.jpg',
+  },
+  {
+    title: 'Brave New World',
+    author: 'Aldous Huxley',
+    link: 'www.goodreads.com/book/show/20518872-the-three-body-problem',
+    img: 'braveWorld.jpg',
+  },
+  {
+    title: 'The Denial of Death',
+    author: 'Ernest Becker',
+    link: 'www.goodreads.com/book/show/2761.The_Denial_of_Death',
+    img: 'denialOfDeath.jpg',
+  },
+];
 ---
 
-<div class={'my-3'}>
-  <h1>My favorite books</h1>
-  <div class='grid grid-cols-2'>
-    <a class='m-1 hover:border-[1px] border-accent'>1</a>
-    <a class='m-1 hover:border-[1px] border-accent'>2</a>
-    <a class='m-1 hover:border-[1px] border-accent'>3</a>
-    <a class='m-1 hover:border-[1px] border-accent'>4</a>
-    <a class='m-1 hover:border-[1px] border-accent'>5</a>
-    <a class='m-1 hover:border-[1px] border-accent'>6</a>
+<div class='my-3'>
+  <div class='flex border-fgLight mb-3'>
+    <div class='border-t-2 flex-1 translate-y-3'></div>
+    <div class='text-lg mx-2'>My favorite books</div>
+    <div class='border-t-2 flex-1 translate-y-3'></div>
+  </div>
+  <div class='grid grid-cols-1 md:grid-cols-2'>
+    {
+      books.map((book) => (
+        <Book
+          title={book.title}
+          author={book.author}
+          link={book.link}
+          img={book.img}
+        />
+      ))
+    }
   </div>
 </div>

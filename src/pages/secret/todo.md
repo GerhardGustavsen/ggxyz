@@ -6,11 +6,10 @@ date: 2023-09-17
 
 ### Apps:
 - procedurally generated minesweeper
-- bridge constructor
+- ultimate bridge constructor
 
 ### Websites:
 - GPTxia
-- Guest book
 - intern 5
 
 ### Other code:
@@ -22,6 +21,14 @@ date: 2023-09-17
 ### Projects:
 - Chrashgami
 - Heli-pack
+
+### ggxyz:
+- Guest book
+- pagenation on blog
+- visiting stats
+- new domain
+- make title component
+- imporve perfomance on images
 
 ### Articles:
 - Peral splash

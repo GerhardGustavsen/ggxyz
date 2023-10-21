@@ -2,7 +2,12 @@
 import Ani from './musicAnimation.astro';
 ---
 
-<div>
+<div class='my-3'>
+  <div class='flex border-fgLight mb-3'>
+    <div class='border-t-2 flex-1 translate-y-3'></div>
+    <div class='text-lg mx-2'>Songs last listened to</div>
+    <div class='border-t-2 flex-1 translate-y-3'></div>
+  </div>
   <div class='flex m-3 ml-0'>
     <a id='LastUrl' class='mr-3 hover:border-[1px] border-accent'>
       <img
@@ -28,7 +33,7 @@ import Ani from './musicAnimation.astro';
   </div>
   <div
     id='SongList'
-    class='flex flex-col underline whitespace-nowrap overflow-hidden max-w-[25em]'
+    class='flex flex-col underline whitespace-nowrap overflow-hidden'
   >
   </div>
 </div>

@@ -3,6 +3,7 @@ import Layout from '../layouts/main.astro';
 import Link from '../components/links/web.astro';
 import Music from '../components/music/music.astro';
 import Books from '../components/books/books.astro';
+import Works from '../components/works/works.astro';
 ---
 
 <Layout>
@@ -37,11 +38,9 @@ import Books from '../components/books/books.astro';
     name='Goodreads'
     url='www.goodreads.com/user/show/116468249-gerhard-gustavsen'
   />
-  <Link
-    name='Goodreads'
-    url='www.goodreads.com/user/show/116468249-gerhard-gustavsen'
-  />
   <Link name='Spotify stats' url='stats.fm/gegu2902' />
 
+  <Books />
   <Music />
+  <Works />
 </Layout>
