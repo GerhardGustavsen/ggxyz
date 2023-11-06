@@ -4,9 +4,10 @@ type Props = {
   author: string;
   link: string;
   img: string;
+  series: boolean;
 };
 
-const { title, author, link, img } = Astro.props;
+const { title, author, link, img, series } = Astro.props;
 ---
 
 <div class='flex m-3 ml-0'>
@@ -19,5 +20,6 @@ const { title, author, link, img } = Astro.props;
   <div class='flex-1'>
     <h1 class='text-accent font-bold'>{title}</h1>
     <p>by {author}</p>
+    {series && <p>(The whole series)</p>}
   </div>
 </div>
