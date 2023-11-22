@@ -5,7 +5,7 @@ date: 2023-09-17
 ---
 ![img](/images/projects/vanbuild/car.jpg)
 
-I've long wondred how i shuld document this project. In the summer of 2021 I bought a van. I then converted this van to a camper, and then procided to live fulltime in it for over halv a year. I have decided to splitt the project into 2 articles. One about the practical process of converting a van to a camper and another article about the vanlife lifestyle and my thoughts on it. This will be the article describing the build prosess. The other vanlife article can be found [here](./vanlife).
+I've long wondred how i shuld document this project. In the summer of 2021 I bought a van. I then converted this van to a camper, and then procided to live fulltime in it for over halv a year. I have decided to splitt the project into 2 articles. One about the practical process of converting a van to a camper and another article about the vanlife lifestyle and my thoughts on it. This will be the article describing the build prosess. The other vanlife article can be found [here](https://gergus.no/projects/vanlife).
 
 ## Planning
 Ive long had the dream of building a van to live in full time. In the spring of 2021, covid was raging and I wanted to have a big new project to spend my time on. There was few activities so, I thought I might as well realize my vanlife dream. However as most people are aware of, its not so simple to just start a huge project. Everything feels scary and nothing is thought out. I had made some rough economic calculations, but knew that the varriance was large. My statagy to get starting and compleating a huge project like this is as follows.

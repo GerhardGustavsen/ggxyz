@@ -1,7 +1,6 @@
 ---
 layout: /src/layouts/article.astro
 title: Loving = Dying
-draft: true
 date: 2023-11-22
 ---
 
