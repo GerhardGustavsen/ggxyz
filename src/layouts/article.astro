@@ -1,16 +1,14 @@
 ---
 import './article.scss';
 import Layout from './main.astro';
+import Title from '../components/title.astro';
 const { frontmatter } = Astro.props;
 ---
 
 <Layout>
   <div class='article'>
-    <div class='flex border-fgLight mb-3'>
-      <div class='border-t-2 flex-1 translate-y-3'></div>
-      <div class='text-xl mx-2'>{frontmatter.title}</div>
-      <div class='border-t-2 flex-1 translate-y-3'></div>
-    </div>
+    <Title title={frontmatter.title} />
+
     <slot />
     <div class='text-sm'>
       <p class=''>Written by Gerhard</p>

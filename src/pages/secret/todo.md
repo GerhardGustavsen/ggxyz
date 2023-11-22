@@ -13,13 +13,12 @@ date: 2023-09-17
 - intern 5
 
 ### Other code:
-- Functional preformace testing with cypress 
 - neovim 
 - nixOS
 - crypto infinet money glitch
 
 ### Projects:
-- Chrashgami
+- Crashgami
 - Heli-pack
 
 ### ggxyz:
@@ -34,3 +33,4 @@ date: 2023-09-17
 - Peral splash
 - The metaphysical counciusness
 - Bunker Boys
+- Functional preformace testing with cypress 

@@ -1,6 +1,10 @@
 ---
 import Layout from '../../layouts/main.astro';
+import Title from '../../components/title.astro';
 const allPosts = (await Astro.glob('./*.md')).reverse();
 ---
 
-<Layout>{allPosts.map((item) => <item.Content />)}</Layout>
+<Layout>
+  <Title title='My Blog' />
+  {allPosts.map((item) => <item.Content />)}
+</Layout>
