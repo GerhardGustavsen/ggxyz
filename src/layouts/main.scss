@@ -3,6 +3,32 @@ body {
   font-family: 'Courier New', monospace, system-ui;
 }
 
+textarea {
+  font-size: 1em;
+  font-family: inherit;
+  padding: 0.1em 0.3em !important;
+  background-color: #333333;
+  border: 2px solid #222222;
+  border-radius: 5px;
+
+  &:focus {
+    outline: solid #8000ff 2px !important;
+  }
+}
+
+input {
+  font-size: 1em;
+  font-family: inherit;
+  padding: 0.1em 0.3em !important;
+  background-color: #333333;
+  border: 2px solid #222222;
+  border-radius: 5px;
+
+  &:focus {
+    outline: solid #8000ff 2px !important;
+  }
+}
+
 .patternDark {
   background-image: url(/bgL.svg);
 }
