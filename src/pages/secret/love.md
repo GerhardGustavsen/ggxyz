@@ -2,6 +2,7 @@
 layout: /src/layouts/article.astro
 title: Loving = Dying
 date: 2023-11-22
+draft: true
 ---
 
 Loving is dying.

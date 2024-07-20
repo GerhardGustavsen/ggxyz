@@ -9,7 +9,8 @@ const { frontmatter } = Astro.props;
   <div class='article'>
     <Title title={frontmatter.title} />
 
-    <slot />
+    {!frontmatter.draft && <slot />}
+    {frontmatter.draft && <p>🚧👷Under construction🚧</p>}
     <div class='text-sm'>
       <p class=''>Written by Gerhard</p>
       <div class='flex mb-[-45px]'>
